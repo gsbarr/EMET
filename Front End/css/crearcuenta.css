@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 body{
-    background-image: url(buenosaires..jpg);
+    background-image: url(../img/buenosaires..jpg);
 }
 
 .form-registrer{
