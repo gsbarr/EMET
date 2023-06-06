@@ -98,7 +98,7 @@ header {
     box-shadow: #ffff34 10px 10px 20px;
     width: 350px;
     height: 330px;
-    background: url(../img/ImgsElParcheP/imgs/sun-parallax-1.png);
+    background: url(../../img/ImgsElParcheP/imgs/sun-parallax-1.png);
     background-size: cover;
 
     -webkit-animation: sun 5s infinite linear;
