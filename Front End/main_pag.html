@@ -1,24 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-      <title>Proyecto Estación Meteorológica</title>
+      <title>Proyecto E.M.E.T.</title>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1">
-      <link href="css\CSSElParcheP\style_1.css" rel="stylesheet">
-      <link rel="stylesheet" href="css\CSSElParcheP\parallax.css">
-      <link href="css\CSSElParcheP\materialize\css\materialize.css" rel="stylesheet">
+      <link href="css\main_pag.css" rel="stylesheet">
+      <link href="css\materialize\css\materialize.css" rel="stylesheet">
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js">
+      <link rel="icon" href="img/logos/Logo2.png">
     </head>
     <body>
       <header class="banner navbar-fixed">
         <nav>
           <div class="nav-wrapper grey-darken">
-            <a href="#" class="brand-logo"><img class="logo" src="img\ImgsElParcheP\logos\Logo2.png"><h5 class="text-logo"><b> ESTACIÓN METEOROLÓGICA</b></h5></a>
+            <a href="#" class="brand-logo"><img class="logo" src="img\logos\Logo2.png"><h5 class="text-logo"><b> ESTACIÓN METEOROLÓGICA</b></h5></a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
               <li><a href="#">Temperatura</a></li>
               <li><a href="#">Ayuda</a></li>
-              <li><a href="#">Log-in</a></li>
+              <li><a href="clima.html">Log-in</a></li>
             </ul>
           </div>
         </nav>
@@ -26,7 +26,7 @@
 
       <div class="container">
         <div class="box-presentation">
-          <img class="img-presentation" align="center" src="img\ImgsElParcheP\logos\Logo2.png">
+          <img class="img-presentation" align="center" src="img\logos\Logo2.png">
           <p><h2 class="text-presentation" align="center" style="color:#ffffff";><b>Te damos la bienvenida a nuestra ESTACIÓN METEOROLÓGICA.</b></h2></p>
         </div>
 
@@ -35,17 +35,29 @@
 
           <!-- Sección Parallax 1 -->
 
-          <div class="parallax-container">
-            <div class="parallax"><img src="img/ImgsElParcheP/imgs/cielo.jpg"></div>
+          <div class="container-fluid">
+            <div class="parallax-1">
+              <div class="text-parallax">
+                <p><h3 class="text-1" style="color: white"><b>Aquí encontrarás información del clima en tu localidad, húmedad, cómo estará el clima en las próximas horas, el clima a diario, entre otros datos.</b></h3></p>
+              </div>
+            </div>
           </div>
-          <div class="text">
-
-          </div>
+          
         <div id="sun-sky-1" class="sun"></div>
 
+          <!-- Sección Parallax 2 -->
+
+          <div class="container-fluid image-parallax">
+            <div class="parallax-2">
+              <div class="text-parallax">
+                <p><h3 class="text-2" align="right" style="color: white"><b>Nuestra página cuenta con una base de datos sofisticado, almacenamos y cuidamos de tus datos y tenemos un sistema de datos sobre las condiciones clímaticas en cada localidad del país.</b></h3></p>
+              </div>
+            </div>
+          </div>
 
 
-      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js">
+
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js">
            document.addEventListener('DOMContentLoaded', function() {
             var elems = document.querySelectorAll('.parallax');
             var instances = M.Parallax.init(elems, options);
