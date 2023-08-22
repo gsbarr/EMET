@@ -54,11 +54,12 @@ function crearUser(){
     console.log("creando usuario... ");
     // Petición HTTP
     try{   
-        respuesta = fetch('api/usuarios', {
+        respuesta = fetch('http://10.0.1.135:8080/api/usuarios', {
+            mode: 'no-cors',
             method: 'POST', //metodo HTTP
             headers: {   //aca decimos que devuelve un JSON
                 'Accept': 'application/json',
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
             },
             body: JSON.stringify(datos)     //Acá van los datos del registro    
         })
