@@ -3,7 +3,7 @@ package com.WebApp.WebApp.models;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "usuarios")
+@Table(name = "usuario")
 public class Usuario {
 
     @Column(name = "nombre")
@@ -16,6 +16,19 @@ public class Usuario {
     private String dni;
     @Column(name = "password")
     private String password;
+
+    // Columna obtenida por relación con otra tabla
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "fk_domicilio")
+    private Domicilio domicilio;
+
+    public Domicilio getDomicilio() {
+        return domicilio;
+    }
+
+    public void setDomicilio(Domicilio domicilio) {
+        this.domicilio = domicilio;
+    }
 
     public String getNombre() {
         return nombre;
@@ -48,4 +61,5 @@ public class Usuario {
     public void setPassword(String password) {
         this.password = password;
     }
+
 }

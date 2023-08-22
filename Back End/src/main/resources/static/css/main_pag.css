@@ -1,0 +1,178 @@
+html{
+    display: fixed;
+    position: block;
+    background: linear-gradient(to bottom, #0d47a1 0%, #64b5f6 100%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 3000px;
+}
+
+body {
+    overflow: hidden;
+    overflow-y:auto;
+}
+
+header {
+    position: sticky;
+}
+.nav-wrapper {
+    background-color: #424242;
+    box-shadow: #202020 2px 3px 6px;
+}
+
+.logo {
+    width: 70px;
+    height: 70px;
+    margin-left: 4%;
+}
+
+.text-logo {
+    margin-top: -26%;
+    margin-left: 30%;
+}
+
+.box-presentation {
+    height: 500px;
+    background: rgba(0,0,0,0);
+}
+
+.img-presentation {
+    width: 400px;
+    height: 400px;
+    margin-left: 27%;
+    animation-duration: 1s;
+    animation-name: image-presentation;
+}
+
+.text-presentation {
+    margin-top: -3%;
+    text-shadow: black 3px 2px 3px;
+    animation-duration: 1s;
+    animation-name: text-presentation;
+}
+
+@keyframes image-presentation {
+    from {
+        margin-top: -20%;
+        opacity: 0%
+    }
+
+    to {
+        margin-top: 0%;
+        opacity: 100%
+    }
+}
+
+@keyframes text-presentation {
+    from {
+        margin-top: -20%;
+        opacity: 0%;
+    }
+
+    to {
+        margin-top: -3%;
+        opacity: 100%;
+    }
+}
+
+.sky-1 {
+    width: 1460px;
+    height: 467px;
+    z-index: 1;
+
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.sun {
+    position: relative;
+    background: #ffff34;
+    margin-left: 90%;
+    margin-top: -30%;
+
+    z-index: 1;
+    transform: translateY(-25vh) translateZ(0px) scale(1);
+
+
+    border-radius: 600px;
+    box-shadow: #ffff34 0px 0px 50px,
+                  #ffff34 0px 0px 50px,
+                  #ffff34 0px 0px 50px;
+    width: 350px;
+    height: 330px;
+    background: url(../img/backgrounds/sun-parallax-1.png);
+    background-size: cover;
+
+    -webkit-animation: sun 5s infinite linear;
+
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+@-webkit-keyframes sun {
+    from {
+        background-position: left center;
+    }
+
+    to {
+        background-position: -82.2vh center;
+    }
+}
+
+.box-text-1 {
+    background-color: #7692FF;
+    width: 1500px;
+    height: 200px;
+    margin-left: -22%;
+    margin-top: -15%;
+    z-index: 1;
+}
+
+/* Section Parallax 1 */
+    
+p{color:#fff;}
+    
+.container-fluid{
+    margin-top: 20%;
+    width:100%;
+}
+    
+.parallax-1{
+    height:500px;
+    width: 1500px;
+    background-image:url(../img/backgrounds/cielo.jpg);
+    margin-left: -30%;
+    background-size:cover;
+    background-attachment: fixed;
+}
+
+.text-1{
+    margin-left: 12%;
+    margin-top: 4%;
+    width: 500px;
+    text-shadow: black 3px 2px 3px;
+}
+
+/* Section Parallax 2 */
+
+.image-parallax{
+    margin-left: -22%;
+    margin-top: -5%;
+}
+
+.parallax-2{
+    height:600px;
+    width: 550px;
+    background-image:url(../img/backgrounds/climas-EMET.png);
+    background-size:unset;
+    background-attachment: fixed;
+}
+
+.text-2{
+    background-color: rgba(100, 181, 246, .4);
+    margin-left: 120%;
+    width: 500px;
+    height: 600px;
+    text-shadow: black 3px 2px 3px;
+}

@@ -31,24 +31,26 @@ function eliminarUser(){
 
 //funcion para crear nuevo usuario
 function crearUser(){
-    inputNombre = document.querySelector("#inputNombre");
-    inputDNI = document.querySelector("#inputDNI");
-    inputPassword = document.querySelector("#inputPassword");
-    inputPasswordCon = document.querySelector("#inputPasswordConfirm");
+    inputnombres = document.querySelector("#nombres");
+    //inputcorreo = document.querySelector("#correo");
+    inputapellidos = document.querySelector("#apellidos");
+    inputcontraseña = document.querySelector("#contraseña");
+    inputconfcontraseña = document.querySelector("#confcontraseña");
     let datos = {};
     let codigoResp;
 
     // Verifico si las password coinciden
-    if (inputPassword.value != inputPasswordCon.value){
+    if (inputcontraseña.value != inputconfcontraseña.value){
         alert("Las contraseñas no coinciden");
         return;
     }
 
     // Armamos el JSON con los datos del registro
-    datos.nombre = inputNombre.value;
-    datos.dni = inputDNI.value;
-    datos.password = inputPassword.value;
-
+    datos.nombre = inputnombres.value;
+    datos.dni = inputapellidos.value;
+    //datos.correo = inputcorreo.value;
+    datos.password = inputcontraseña.value;
+    
     console.log("creando usuario... ");
     // Petición HTTP
     try{   
