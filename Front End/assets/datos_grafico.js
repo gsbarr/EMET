@@ -36,7 +36,7 @@ var myLineChart = new Chart(ctx, {
       label: "Revenue",
       backgroundColor: "rgba(2,117,216,1)",
       borderColor: "rgba(2,117,216,1)",
-      data: [datos .lunes, datos.martes, datos.miercoles, datos.jueves, datos.jueves, datos.viernes, datos.sabados]
+      data: [datos.lunes, datos.martes, datos.miercoles, datos.jueves, datos.jueves, datos.viernes, datos.sabados]
     }],
   },
   options: {
