@@ -32,7 +32,7 @@ function eliminarUser(){
 //funcion para crear nuevo usuario
 function crearUser(){
     inputnombres = document.querySelector("#nombres");
-    //inputcorreo = document.querySelector("#correo");
+    inputcorreo = document.querySelector("#correo");
     inputapellidos = document.querySelector("#apellidos");
     inputcontraseña = document.querySelector("#contraseña");
     inputconfcontraseña = document.querySelector("#confcontraseña");
@@ -48,9 +48,10 @@ function crearUser(){
     // Armamos el JSON con los datos del registro
     datos.nombre = inputnombres.value;
     datos.dni = inputapellidos.value;
-    //datos.correo = inputcorreo.value;
+    datos.correo = inputcorreo.value;
     datos.password = inputcontraseña.value;
     
+    console.log(JSON.stringify(datos));
     console.log("creando usuario... ");
     // Petición HTTP
     try{   
