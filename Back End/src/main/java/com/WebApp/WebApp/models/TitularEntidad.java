@@ -5,7 +5,7 @@ import jakarta.persistence.*;
 
 @Entity
 @Table(name = "titular")
-public class Titular {
+public class TitularEntidad {
 
     @Column(name = "id")
     @Id
@@ -23,11 +23,11 @@ public class Titular {
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "fk_domicilio")
-    private Domicilio domicilio;
+    private DomicilioEntidad domicilio;
 
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "fk_locacion")
-    private Locacion locacion;
+    private LocacionEntidad locacion;
 
     public int getId() {
         return id;
@@ -61,19 +61,19 @@ public class Titular {
         this.razonSocial = razonSocial;
     }
 
-    public Domicilio getDomicilio() {
+    public DomicilioEntidad getDomicilio() {
         return domicilio;
     }
 
-    public void setDomicilio(Domicilio domicilio) {
+    public void setDomicilio(DomicilioEntidad domicilio) {
         this.domicilio = domicilio;
     }
 
-    public Locacion getLocacion() {
+    public LocacionEntidad getLocacion() {
         return locacion;
     }
 
-    public void setLocacion(Locacion locacion) {
+    public void setLocacion(LocacionEntidad locacion) {
         this.locacion = locacion;
     }
 

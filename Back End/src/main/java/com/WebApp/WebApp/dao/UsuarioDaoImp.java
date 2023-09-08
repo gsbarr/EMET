@@ -1,7 +1,7 @@
 package com.WebApp.WebApp.dao;
 
-import com.WebApp.WebApp.models.Domicilio;
-import com.WebApp.WebApp.models.Usuario;
+import com.WebApp.WebApp.models.DomicilioEntidad;
+import com.WebApp.WebApp.models.UsuarioEntidad;
 import com.WebApp.WebApp.repositories.UsuarioRepository;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
@@ -25,29 +25,29 @@ public class UsuarioDaoImp implements UsuarioDao {
     private UsuarioRepository usuarioRepo;
 
     @Override
-    public Usuario crearUsuario() {
+    public UsuarioEntidad crearUsuario() {
         //String query = "";
         return null;
     }
 
     @Override
-    public List<Usuario> getLista() {
+    public List<UsuarioEntidad> getLista() {
         String query = "FROM Usuario";  // OJO!!! Acá va la CLASE del modelo, NO la tabla
         return entityManager.createQuery(query).getResultList();
     }
 
     @Override
     public void eliminar(int id) {
-        Usuario user = entityManager.find(Usuario.class, id);
+        UsuarioEntidad user = entityManager.find(UsuarioEntidad.class, id);
         entityManager.remove(user);
     }
 
     @Override
     public void registrar(Map<String, String> u) {
         // Preparamos el objeto
-        Usuario nuevoU = new Usuario();
+        UsuarioEntidad nuevoU = new UsuarioEntidad();
         //Buscamos domicilio
-        Domicilio dom = entityManager.find(Domicilio.class, u.get("fk_domicilio"));
+        DomicilioEntidad dom = entityManager.find(DomicilioEntidad.class, u.get("fk_domicilio"));
 
         nuevoU.setNombre(u.get("nombre"));
         nuevoU.setDni(u.get("dni"));
@@ -58,11 +58,11 @@ public class UsuarioDaoImp implements UsuarioDao {
     }
 
     @Override
-    public Usuario getUsuario(int id) {
+    public UsuarioEntidad getUsuario(int id) {
 
             // Una variable Optional contempla que pueda ser nula
             // En este caso, la usamos porque quizás no exista usuario que coincida con el ID
-            Optional<Usuario> us = usuarioRepo.findById(id);
+            Optional<UsuarioEntidad> us = usuarioRepo.findById(id);
             // Optional.get() devuelve el valor si existe, y devuelve una excepción si no existe
             return us.get();
 

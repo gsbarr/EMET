@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 
 @Entity
 @Table(name = "domicilio")
-public class Domicilio {
+public class DomicilioEntidad {
     @Column(name = "id")
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -14,13 +14,13 @@ public class Domicilio {
 
     @ManyToOne(optional = false) //Indica que tiene que sí o sí tener una provincia
     @JoinColumn(name = "fk_provincia")
-    private Provincia provincia;
+    private ProvinciaEntidad provincia;
 
-    public Provincia getProvincia() {
+    public ProvinciaEntidad getProvincia() {
         return provincia;
     }
 
-    public void setProvincia(Provincia provincia) {
+    public void setProvincia(ProvinciaEntidad provincia) {
         this.provincia = provincia;
     }
 

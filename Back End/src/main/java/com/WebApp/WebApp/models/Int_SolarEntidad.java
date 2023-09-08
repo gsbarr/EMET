@@ -5,16 +5,19 @@ import jakarta.persistence.*;
 import java.util.Calendar;
 
 @Entity
-@Table(name = "precipitacion")
-public class Precipitaciones {
+@Table(name = "int_solar")
+public class Int_SolarEntidad {
 
     @Column(name = "id")
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column(name = "valor_precipi_mm")
-    private float valorPrecipiMm;
+    @Column(name = "lumenes")
+    private float lumenes;
+
+    @Column(name = "insolacion")
+    private float insolacion;
 
     @Column(name = "fecha_hora")
     @Temporal(TemporalType.TIMESTAMP)
@@ -22,7 +25,7 @@ public class Precipitaciones {
 
     @ManyToOne(optional = false)
     @JoinColumn(name = "fk_locacion")
-    private Locacion locacion;
+    private LocacionEntidad locacion;
 
     public int getId() {
         return id;
@@ -32,12 +35,20 @@ public class Precipitaciones {
         this.id = id;
     }
 
-    public float getValorPrecipiMm() {
-        return valorPrecipiMm;
+    public float getLumenes() {
+        return lumenes;
     }
 
-    public void setValorPrecipiMm(float valorPrecipiMm) {
-        this.valorPrecipiMm = valorPrecipiMm;
+    public void setLumenes(float lumenes) {
+        this.lumenes = lumenes;
+    }
+
+    public float getInsolacion() {
+        return insolacion;
+    }
+
+    public void setInsolacion(float insolacion) {
+        this.insolacion = insolacion;
     }
 
     public Calendar getFechaHora() {
@@ -48,11 +59,11 @@ public class Precipitaciones {
         this.fechaHora = fechaHora;
     }
 
-    public Locacion getLocacion() {
+    public LocacionEntidad getLocacion() {
         return locacion;
     }
 
-    public void setLocacion(Locacion locacion) {
+    public void setLocacion(LocacionEntidad locacion) {
         this.locacion = locacion;
     }
 }

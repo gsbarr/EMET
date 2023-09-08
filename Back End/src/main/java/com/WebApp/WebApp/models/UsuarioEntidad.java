@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 
 @Entity
 @Table(name = "usuario")
-public class Usuario {
+public class UsuarioEntidad {
 
     @Column(name = "nombre")
     private String nombre;
@@ -20,13 +20,13 @@ public class Usuario {
     // Columna obtenida por relación con otra tabla
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "fk_domicilio")
-    private Domicilio domicilio;
+    private DomicilioEntidad domicilio;
 
-    public Domicilio getDomicilio() {
+    public DomicilioEntidad getDomicilio() {
         return domicilio;
     }
 
-    public void setDomicilio(Domicilio domicilio) {
+    public void setDomicilio(DomicilioEntidad domicilio) {
         this.domicilio = domicilio;
     }
 

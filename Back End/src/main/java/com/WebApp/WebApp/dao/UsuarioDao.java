@@ -1,18 +1,17 @@
 package com.WebApp.WebApp.dao;
 
-import com.WebApp.WebApp.models.Usuario;
+import com.WebApp.WebApp.models.UsuarioEntidad;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.List;
 import java.util.Map;
 
 public interface UsuarioDao {
 
-    Usuario crearUsuario();
-    Usuario getUsuario(@PathVariable int id) ;
+    UsuarioEntidad crearUsuario();
+    UsuarioEntidad getUsuario(@PathVariable int id) ;
 
-    List<Usuario> getLista();
+    List<UsuarioEntidad> getLista();
 
     void eliminar(int id);
 

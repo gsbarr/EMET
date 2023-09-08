@@ -7,7 +7,7 @@ import java.util.Calendar;
 
 @Entity
 @Table(name = "presion_atmosferica")
-public class Presion_Atmosferica {
+public class Pre_AtmosfericaEntidad {
 
     @Column(name = "id")
     @Id
@@ -23,7 +23,7 @@ public class Presion_Atmosferica {
 
     @ManyToOne(optional = false)
     @JoinColumn(name = "fk_locacion")
-    private Locacion locacion;
+    private LocacionEntidad locacion;
 
     public int getId() {
         return id;
@@ -49,11 +49,11 @@ public class Presion_Atmosferica {
         this.altitud = altitud;
     }
 
-    public Locacion getLocacion() {
+    public LocacionEntidad getLocacion() {
         return locacion;
     }
 
-    public void setLocacion(Locacion locacion) {
+    public void setLocacion(LocacionEntidad locacion) {
         this.locacion = locacion;
     }
 

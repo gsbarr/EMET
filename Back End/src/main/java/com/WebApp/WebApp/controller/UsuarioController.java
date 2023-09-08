@@ -1,8 +1,7 @@
 package com.WebApp.WebApp.controller;
 
-import com.WebApp.WebApp.dao.UsuarioDao;
 import com.WebApp.WebApp.dao.UsuarioDaoImp;
-import com.WebApp.WebApp.models.Usuario;
+import com.WebApp.WebApp.models.UsuarioEntidad;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -21,8 +20,8 @@ public class UsuarioController  {
 
     // Función de prueba
     @RequestMapping(value = "api/prueba")
-    public Usuario pruebaUsuario() {
-        Usuario u1 = new Usuario();
+    public UsuarioEntidad pruebaUsuario() {
+        UsuarioEntidad u1 = new UsuarioEntidad();
         u1.setNombre("Carlos");
         u1.setDni("2222");
         u1.setPassword("1234");
@@ -47,17 +46,17 @@ public class UsuarioController  {
 
     // Para obtener un unico usuario por ID
     @RequestMapping(value = "api/usuarios/{id}", method = RequestMethod.GET)
-    public Usuario obtUserId(@PathVariable int id) {
+    public UsuarioEntidad obtUserId(@PathVariable int id) {
         return user.getUsuario(id);
     }
 
     // Para obtener lista total de usuarios
     @RequestMapping(value = "api/usuarios/listaUser", method = RequestMethod.GET)
-    public ResponseEntity<List<Usuario>> listaUser() {
+    public ResponseEntity<List<UsuarioEntidad>> listaUser() {
         HttpHeaders responseHeaders = new HttpHeaders();
         //responseHeaders.setLocation(location);
         responseHeaders.set("Access-Control-Allow-Origin", "*");
-        return new ResponseEntity<List<Usuario>>(user.getLista(), responseHeaders, HttpStatus.OK);
+        return new ResponseEntity<List<UsuarioEntidad>>(user.getLista(), responseHeaders, HttpStatus.OK);
     }
 
     @RequestMapping(value = "api/usuarios/del/{id}", method = RequestMethod.DELETE)

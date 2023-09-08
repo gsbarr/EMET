@@ -5,7 +5,7 @@ import jakarta.persistence.*;
 
 @Entity
 @Table(name = "locacion")
-public class Locacion {
+public class LocacionEntidad {
 
     @Column(name = "id")
     @Id
@@ -23,7 +23,7 @@ public class Locacion {
 
     @ManyToOne(optional = false)
     @JoinColumn(name = "fk_titular")
-    private Titular titular;
+    private TitularEntidad titular;
 
     public int getId() {
         return id;
@@ -57,11 +57,11 @@ public class Locacion {
         this.direccion = direccion;
     }
 
-    public Titular getTitular() {
+    public TitularEntidad getTitular() {
         return titular;
     }
 
-    public void setTitular(Titular titular) {
+    public void setTitular(TitularEntidad titular) {
         this.titular = titular;
     }
 }

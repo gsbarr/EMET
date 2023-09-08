@@ -6,7 +6,7 @@ import java.util.Calendar;
 
 @Entity
 @Table(name = "temp_hum")
-public class Temperatura_Humedad {
+public class Temp_HumEntidad {
 
     @Column(name = "id")
     @Id
@@ -25,7 +25,7 @@ public class Temperatura_Humedad {
 
     @ManyToOne(optional = false)
     @JoinColumn(name = "fk_locacion")
-    private Locacion locacion;
+    private LocacionEntidad locacion;
 
     public int getId() {
         return id;
@@ -59,11 +59,11 @@ public class Temperatura_Humedad {
         this.fechaHora = fechaHora;
     }
 
-    public Locacion getLocacion() {
+    public LocacionEntidad getLocacion() {
         return locacion;
     }
 
-    public void setLocacion(Locacion locacion) {
+    public void setLocacion(LocacionEntidad locacion) {
         this.locacion = locacion;
     }
 }
