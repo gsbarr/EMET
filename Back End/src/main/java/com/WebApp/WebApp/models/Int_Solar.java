@@ -7,8 +7,8 @@ import lombok.Setter;
 import java.util.Calendar;
 
 @Entity
-@Table(name = "precipitacion")
-public class PrecipitacionesEntity {
+@Table(name = "int_solar")
+public class Int_Solar {
 
     @Getter @Setter
     @Column(name = "id")
@@ -17,8 +17,12 @@ public class PrecipitacionesEntity {
     private long id;
 
     @Getter @Setter
-    @Column(name = "valor_precipi_mm")
-    private float valorPrecipiMm;
+    @Column(name = "lumenes")
+    private float lumenes;
+
+    @Getter @Setter
+    @Column(name = "insolacion")
+    private float insolacion;
 
     @Getter @Setter
     @Column(name = "fecha_hora")
@@ -28,5 +32,5 @@ public class PrecipitacionesEntity {
     @Getter @Setter
     @ManyToOne(optional = false)
     @JoinColumn(name = "fk_locacion")
-    private LocacionEntity locacion;
+    private Locacion locacion;
 }

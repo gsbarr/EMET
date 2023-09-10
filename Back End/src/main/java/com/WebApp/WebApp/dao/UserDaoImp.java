@@ -1,7 +1,7 @@
 package com.WebApp.WebApp.dao;
 
-import com.WebApp.WebApp.models.DomicilioEntity;
-import com.WebApp.WebApp.models.UserEntity;
+import com.WebApp.WebApp.models.Domicilio;
+import com.WebApp.WebApp.models.Usuario;
 import com.WebApp.WebApp.repositories.UserRepository;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
@@ -25,10 +25,9 @@ public class UserDaoImp implements UserDao {
     private UserRepository userRepo;
 
     @Override
-    public List<UserEntity> getListOfUsers() {
-        String query = "FROM Usuario";  // OJO!!! Acá va la CLASE del modelo, NO la tabla
-        List<UserEntity> users = userRepo.findAll();
-        return users;
+    public List<Usuario> getListOfUsers() {
+        //String query = "FROM Usuario";  // OJO!!! Acá va la CLASE del modelo, NO la tabla
+        return userRepo.findAll();
     }
 
     @Override
@@ -40,27 +39,29 @@ public class UserDaoImp implements UserDao {
     @Override
     public void createUser(Map<String, String> userData) {
         // Preparamos el objeto
-        UserEntity newUser = new UserEntity();
+        Usuario newUser = new Usuario();
 
         //Buscamos domicilio
-        DomicilioEntity dom = entityManager.find(DomicilioEntity.class, userData.get("fk_domicilio"));
+        Domicilio dom = entityManager.find(Domicilio.class, userData.get("fk_domicilio"));
 
         newUser.setNombre(userData.get("name"));
         newUser.setEmail(userData.get("email"));
         newUser.setPassword(userData.get("password"));
         newUser.setDomicilio(dom);
 
-        entityManager.merge(newUser);
+        //entityManager.merge(newUser);
+        userRepo.save(newUser);
     }
 
     @Override
-    public UserEntity getUserById(int id) {
+    public Usuario getUserById(int id) {
 
             // Una variable Optional contempla que pueda ser nula
             // En este caso, la usamos porque quizás no exista usuario que coincida con el ID
-            Optional<UserEntity> user = userRepo.findById(id);
+            Optional<Usuario> user = userRepo.findById(id);
             // Optional.get() devuelve el valor si existe, y devuelve una excepción si no existe
-            return user.get();
+            // return (user.isPresent()) ? user.get() : null;
+            return user.orElse(null);
 
 
     }

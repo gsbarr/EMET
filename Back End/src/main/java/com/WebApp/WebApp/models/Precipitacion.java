@@ -1,13 +1,14 @@
 package com.WebApp.WebApp.models;
 
-
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.Calendar;
+
 @Entity
-@Table(name = "locacion")
-public class LocacionEntity {
+@Table(name = "precipitacion")
+public class Precipitacion {
 
     @Getter @Setter
     @Column(name = "id")
@@ -16,19 +17,16 @@ public class LocacionEntity {
     private long id;
 
     @Getter @Setter
-    @Column(name = "nombre")
-    private String nombre;
+    @Column(name = "valor_precipi_mm")
+    private float valorPrecipiMm;
 
     @Getter @Setter
-    @Column(name = "coordenadas")
-    private float coordenadas;
-
-    @Getter @Setter
-    @Column(name = "direccion")
-    private String direccion;
+    @Column(name = "fecha_hora")
+    @Temporal(TemporalType.TIMESTAMP)
+    private Calendar fechaHora;
 
     @Getter @Setter
     @ManyToOne(optional = false)
-    @JoinColumn(name = "fk_titular")
-    private TitularEntity titular;
+    @JoinColumn(name = "fk_locacion")
+    private Locacion locacion;
 }

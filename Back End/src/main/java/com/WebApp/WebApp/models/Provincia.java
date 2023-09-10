@@ -6,7 +6,7 @@ import lombok.Setter;
 
 @Entity
 @Table(name = "provincia")
-public class ProvinciaEntity {
+public class Provincia {
 
     @Getter @Setter
     @Column(name = "id")

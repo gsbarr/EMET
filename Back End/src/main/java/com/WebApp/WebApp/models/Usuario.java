@@ -6,7 +6,7 @@ import lombok.Setter;
 
 @Entity
 @Table(name = "usuario")
-public class UserEntity {
+public class Usuario {
 
     @Getter @Setter
     @Column(name = "id")
@@ -30,5 +30,5 @@ public class UserEntity {
     @Getter @Setter
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "fk_domicilio")
-    private DomicilioEntity domicilio;
+    private Domicilio domicilio;
 }

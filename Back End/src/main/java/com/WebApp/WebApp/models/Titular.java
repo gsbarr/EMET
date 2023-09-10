@@ -9,7 +9,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "titular")
-public class TitularEntity {
+public class Titular {
 
     @Getter @Setter
     @Column(name = "id")
@@ -32,10 +32,10 @@ public class TitularEntity {
     @Getter @Setter
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "fk_domicilio")
-    private DomicilioEntity domicilio;
+    private Domicilio domicilio;
 
     @Getter @Setter
-    @OneToMany(cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "titular") //Esta anotacion puede generar un mal rendimiento de la aplicacion
     @JoinColumn(name = "fk_locacion")
-    private List<LocacionEntity> locaciones;
+    private List<Locacion> locaciones;
 }

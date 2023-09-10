@@ -1,7 +1,7 @@
 package com.WebApp.WebApp.controller;
 
 import com.WebApp.WebApp.dao.UserDaoImp;
-import com.WebApp.WebApp.models.UserEntity;
+import com.WebApp.WebApp.models.Usuario;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -17,12 +17,12 @@ public class UserController {
     private UserDaoImp userDao;
 
     @RequestMapping(value = "api/usuarios", method = RequestMethod.GET)
-    public List<UserEntity> getUserList() {
+    public List<Usuario> getUserList() {
         return userDao.getListOfUsers();
     }
 
     @RequestMapping(value = "api/usuarios/{id}", method = RequestMethod.GET)
-    public UserEntity getUser(@PathVariable int id) {
+    public Usuario getUser(@PathVariable int id) {
         return userDao.getUserById(id);
     }
 
