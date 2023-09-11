@@ -28,51 +28,95 @@ function eliminarUser(){
     
 }
 
-
-//funcion para crear nuevo usuario
-function crearUser(){
-    inputnombres = document.querySelector("#nombres");
-    //inputcorreo = document.querySelector("#correo");
-    inputapellidos = document.querySelector("#apellidos");
+function login(){
+    inputNombre = document.querySelector("#nombres");
     inputcontraseña = document.querySelector("#contraseña");
-    inputconfcontraseña = document.querySelector("#confcontraseña");
     let datos = {};
     let codigoResp;
 
-    // Verifico si las password coinciden
-    if (inputcontraseña.value != inputconfcontraseña.value){
-        alert("Las contraseñas no coinciden");
-        return;
-    }
+
 
     // Armamos el JSON con los datos del registro
-    datos.nombre = inputnombres.value;
-    datos.dni = inputapellidos.value;
-    //datos.correo = inputcorreo.value;
+    datos.nombre = inputNombre.value;
     datos.password = inputcontraseña.value;
-    
+
+    console.log(JSON.stringify(datos));
     console.log("creando usuario... ");
     // Petición HTTP
-    try{   
-        respuesta = fetch('api/usuarios', {
+    try{
+        respuesta = fetch('http://localhost:8080/api/usuarios', {
+            mode: 'no-cors',
             method: 'POST', //metodo HTTP
             headers: {   //aca decimos que devuelve un JSON
                 'Accept': 'application/json',
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
             },
-            body: JSON.stringify(datos)     //Acá van los datos del registro    
+            body: JSON.stringify(datos)     //Acá van los datos del registro
         })
         .then(response => {
             codigoResp = response.status;
             console.log("Respuesta de petición: "+response.status);
-     
+
             //recargamos la pagina
             if(codigoResp >= 200 && codigoResp < 300){
             console.log("Recargando pagina...")
             location.reload();
             }
         });
-   
+
+    }
+    catch (error){
+        //hubo un error
+        console.log("Error en registro: " + error);
+    }
+
+}
+
+//funcion para crear nuevo usuario
+function crearUser(){
+
+    inputName = document.querySelector("#nombres");
+    inputLastName = document.querySelector("#apellidos");
+    inputEmail = document.querySelector("#correo");
+    inputPassword = document.querySelector("#contraseña");
+    inputPasswordConfirm = document.querySelector("#confcontraseña");
+    let datos = {};
+    let codigoResp;
+
+    // Verifico si las password coinciden
+    if (inputPassword.value != inputPasswordConfirm.value){
+        alert("Las contraseñas no coinciden");
+        return;
+    }
+
+    // Armamos el JSON con los datos del registro
+    datos.name = inputName.value;
+    datos.last_name = inputLastName.value;
+    datos.email = inputEmail.value;
+    datos.password = inputPassword.value;
+
+    console.log(JSON.stringify(datos));
+    console.log("creando usuario... ");
+    // Petición HTTP
+    try{
+        respuesta = fetch('http://localhost:8080/api/usuarios', {
+            method: 'POST', //metodo HTTP
+            headers: {   //aca decimos que devuelve un JSON
+                'Accept': 'application/json',
+                "Content-Type": 'application/json',
+            },
+            body: JSON.stringify(datos)     //Acá van los datos del registro
+        })
+        .then(response => {
+            codigoResp = response.status;
+            console.log("Respuesta de petición: "+response.status);
+
+            //recargamos la pagina
+            if(codigoResp >= 200 && codigoResp < 300){
+            console.log("Recargando pagina...")
+            location.reload();
+            }
+        });
     }
     catch (error){
         //hubo un error

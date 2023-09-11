@@ -10,8 +10,8 @@ import java.util.Optional;
 public interface UserDao {
 
     void createUser(Map<String, String> u);
-    Usuario getUserById(@PathVariable int id);
+    Usuario getUserById(@PathVariable Long id);
     List<Usuario> getListOfUsers();
-    void deleteUserById(int id);
+    void deleteUserById(Long id);
 
 }

@@ -36,6 +36,5 @@ public class Titular {
 
     @Getter @Setter
     @OneToMany(mappedBy = "titular") //Esta anotacion puede generar un mal rendimiento de la aplicacion
-    @JoinColumn(name = "fk_locacion")
     private List<Locacion> locaciones;
 }

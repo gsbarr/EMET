@@ -6,6 +6,7 @@ import com.WebApp.WebApp.repositories.UserRepository;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.crossstore.ChangeSetPersister;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -31,7 +32,7 @@ public class UserDaoImp implements UserDao {
     }
 
     @Override
-    public void deleteUserById(int id) {
+    public void deleteUserById(Long id) {
         //Optional<UserEntity> user = userRepo.findById(id);
         userRepo.deleteById(id);
     }
@@ -42,19 +43,22 @@ public class UserDaoImp implements UserDao {
         Usuario newUser = new Usuario();
 
         //Buscamos domicilio
-        Domicilio dom = entityManager.find(Domicilio.class, userData.get("fk_domicilio"));
+        //Cuando intenta buscar el domicilio explota el servidor
+        //¿El domicilio no deberia venir en el JSON?
+        //Domicilio dom = entityManager.find(Domicilio.class, userData.get("fk_domicilio"));
 
         newUser.setNombre(userData.get("name"));
+        newUser.setApellido(userData.get("last_name"));
         newUser.setEmail(userData.get("email"));
         newUser.setPassword(userData.get("password"));
-        newUser.setDomicilio(dom);
+        newUser.setDomicilio(null);
 
         //entityManager.merge(newUser);
         userRepo.save(newUser);
     }
 
     @Override
-    public Usuario getUserById(int id) {
+    public Usuario getUserById(Long id) {
 
             // Una variable Optional contempla que pueda ser nula
             // En este caso, la usamos porque quizás no exista usuario que coincida con el ID
@@ -62,8 +66,6 @@ public class UserDaoImp implements UserDao {
             // Optional.get() devuelve el valor si existe, y devuelve una excepción si no existe
             // return (user.isPresent()) ? user.get() : null;
             return user.orElse(null);
-
-
     }
 
 }

@@ -3,6 +3,7 @@ package com.WebApp.WebApp.models;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.annotations.Comment;
 
 @Entity
 @Table(name = "usuario")
@@ -12,11 +13,15 @@ public class Usuario {
     @Column(name = "id")
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
 
     @Getter @Setter
     @Column(name = "nombre")
     private String nombre;
+
+    @Getter @Setter
+    @Column(name = "apellido")
+    private String apellido;
 
     @Getter @Setter
     @Column(name = "email")

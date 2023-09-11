@@ -29,7 +29,7 @@ function eliminarUser(){
 }
 
 function login(){
-    inputnombres = document.querySelector("#nombres");
+    inputNombre = document.querySelector("#nombres");
     inputcontraseña = document.querySelector("#contraseña");
     let datos = {};
     let codigoResp;
@@ -37,7 +37,7 @@ function login(){
     
 
     // Armamos el JSON con los datos del registro
-    datos.nombre = inputnombres.value;
+    datos.nombre = inputNombre.value;
     datos.password = inputcontraseña.value;
     
     console.log(JSON.stringify(datos));
@@ -74,31 +74,32 @@ function login(){
 
 //funcion para crear nuevo usuario
 function crearUser(){
-    inputnombres = document.querySelector("#nombres");
-    inputcorreo = document.querySelector("#correo");
-    inputapellidos = document.querySelector("#apellidos");
-    inputcontraseña = document.querySelector("#contraseña");
-    inputconfcontraseña = document.querySelector("#confcontraseña");
+
+    inputName = document.querySelector("#nombres");
+    inputLastName = document.querySelector("#apellidos");
+    inputEmail = document.querySelector("#correo");
+    inputPassword = document.querySelector("#contraseña");
+    inputPasswordConfirm = document.querySelector("#confcontraseña");
     let datos = {};
     let codigoResp;
 
     // Verifico si las password coinciden
-    if (inputcontraseña.value != inputconfcontraseña.value){
+    if (inputPassword.value != inputPasswordConfirm.value){
         alert("Las contraseñas no coinciden");
         return;
     }
 
     // Armamos el JSON con los datos del registro
-    datos.nombre = inputnombres.value;
-    datos.dni = inputapellidos.value;
-    datos.correo = inputcorreo.value;
-    datos.password = inputcontraseña.value;
+    datos.name = inputName.value;
+    datos.last_name = inputLastName.value;
+    datos.email = inputEmail.value;
+    datos.password = inputPassword.value;
     
     console.log(JSON.stringify(datos));
     console.log("creando usuario... ");
     // Petición HTTP
     try{   
-        respuesta = fetch('http://10.0.1.135:8080/api/usuarios', {
+        respuesta = fetch('localhost:8080/api/usuarios', {
             mode: 'no-cors',
             method: 'POST', //metodo HTTP
             headers: {   //aca decimos que devuelve un JSON
@@ -110,14 +111,13 @@ function crearUser(){
         .then(response => {
             codigoResp = response.status;
             console.log("Respuesta de petición: "+response.status);
-     
+
             //recargamos la pagina
             if(codigoResp >= 200 && codigoResp < 300){
             console.log("Recargando pagina...")
             location.reload();
             }
         });
-   
     }
     catch (error){
         //hubo un error
