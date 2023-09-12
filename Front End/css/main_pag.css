@@ -1,7 +1,7 @@
 html{
     display: fixed;
     position: block;
-    background: linear-gradient(to bottom, #0d47a1 0%, #64b5f6 100%);
+    background: white;
     background-repeat: no-repeat;
     background-attachment: fixed;
     height: 3000px;
@@ -15,9 +15,9 @@ body {
 header {
     position: sticky;
 }
-.nav-wrapper {
-    background-color: #424242;
-    box-shadow: #202020 2px 3px 6px;
+
+transparent {
+    opacity: 0.87;
 }
 
 .logo {
@@ -26,9 +26,10 @@ header {
     margin-left: 4%;
 }
 
-.text-logo {
+.nav-text {
     margin-top: -82%;
     margin-left: 100%;
+    color: black;
 }
 
 .box-presentation {
