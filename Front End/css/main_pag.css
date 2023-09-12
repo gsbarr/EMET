@@ -104,14 +104,13 @@ transparent {
     height: 330px;
     background: url(../img/backgrounds/sun-parallax-1.png);
     background-size: cover;
-
     -webkit-animation: sun 5s infinite linear;
 
     background-attachment: fixed;
     background-size: cover;
 }
 
-@-webkit-keyframes sun {
+webkit-keyframes sun {
     from {
         background-position: left center;
     }
