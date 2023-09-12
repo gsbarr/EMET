@@ -1,65 +1,39 @@
 package com.WebApp.WebApp.models;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
+import org.hibernate.annotations.Comment;
 
 @Entity
 @Table(name = "usuario")
 public class Usuario {
 
-    @Column(name = "nombre")
-    private String nombre;
+    @Getter @Setter
     @Column(name = "id")
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
-    @Column(name = "dni")
-    private String dni;
+    private Long id;
+
+    @Getter @Setter
+    @Column(name = "nombre")
+    private String nombre;
+
+    @Getter @Setter
+    @Column(name = "apellido")
+    private String apellido;
+
+    @Getter @Setter
+    @Column(name = "email")
+    private String email;
+
+    @Getter @Setter
     @Column(name = "password")
     private String password;
 
     // Columna obtenida por relación con otra tabla
+    @Getter @Setter
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "fk_domicilio")
     private Domicilio domicilio;
-
-    public Domicilio getDomicilio() {
-        return domicilio;
-    }
-
-    public void setDomicilio(Domicilio domicilio) {
-        this.domicilio = domicilio;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getDni() {
-        return dni;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public void setDni(String dni) {
-        this.dni = dni;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
 }

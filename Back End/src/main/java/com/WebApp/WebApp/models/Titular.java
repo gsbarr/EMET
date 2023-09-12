@@ -2,80 +2,39 @@ package com.WebApp.WebApp.models;
 
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
+
+import java.util.List;
 
 @Entity
 @Table(name = "titular")
 public class Titular {
 
+    @Getter @Setter
     @Column(name = "id")
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private long id;
 
+    @Getter @Setter
     @Column(name = "nombre")
     private String nombre;
 
+    @Getter @Setter
     @Column(name = "apellido")
     private String apellido;
 
+    @Getter @Setter
     @Column(name = "razon_social")
     private String razonSocial;
 
+    @Getter @Setter
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "fk_domicilio")
     private Domicilio domicilio;
 
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "fk_locacion")
-    private Locacion locacion;
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public String getApellido() {
-        return apellido;
-    }
-
-    public void setApellido(String apellido) {
-        this.apellido = apellido;
-    }
-
-    public String getRazonSocial() {
-        return razonSocial;
-    }
-
-    public void setRazonSocial(String razonSocial) {
-        this.razonSocial = razonSocial;
-    }
-
-    public Domicilio getDomicilio() {
-        return domicilio;
-    }
-
-    public void setDomicilio(Domicilio domicilio) {
-        this.domicilio = domicilio;
-    }
-
-    public Locacion getLocacion() {
-        return locacion;
-    }
-
-    public void setLocacion(Locacion locacion) {
-        this.locacion = locacion;
-    }
-
-
+    @Getter @Setter
+    @OneToMany(mappedBy = "titular") //Esta anotacion puede generar un mal rendimiento de la aplicacion
+    private List<Locacion> locaciones;
 }

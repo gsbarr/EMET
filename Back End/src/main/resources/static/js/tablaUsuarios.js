@@ -2,12 +2,36 @@ $(document).ready(function(){
     //user = crearUsuario();
 
     
-    lista = listarUsuarios();
+    //lista = listarUsuarios();
 
     const datatablesSimple = document.getElementById('datatablesSimple');
     if (datatablesSimple) {
         new simpleDatatables.DataTable(datatablesSimple);
     }
+                // Realizar una solicitud GET al servidor para obtener los datos
+                $.ajax({
+                    url: 'http://localhost:8080/api/usuarios', // Reemplaza con la URL correcta del servidor
+                    type: 'GET',
+                    dataType: 'json',
+                    success: function (data) {
+                        $('#tableBody').empty();
+                        console.log(data[0]);
+                        // Agregar los datos a la tabla
+                        var tableBody = $('#tableBody');
+                        data.forEach(function (usuario) {
+                            tableBody.append('<tr>' +
+                                '<td>' + usuario.id + '</td>' +
+                                '<td>' + usuario.nombre + '</td>' +
+                                '<td>' + usuario.apellido + '</td>' +
+                                '<td>' + usuario.email + '</td>' +
+                                '<td>' + usuario.password + '</td>' +
+                                '</tr>');
+                        });
+                    },
+                    error: function () {
+                        alert('Error al cargar los datos desde el servidor.');
+                    }
+                });
 
 });
 
@@ -44,7 +68,7 @@ async function listarUsuarios() {
     //let listaUsuarios = [];
 
     //URL del servicio  -  El codigo espera una respuesta
-    const respuesta = await fetch('api/usuarios/listaUser', {
+    const respuesta = await fetch('http://localhost:8080/api/usuarios', {
      method: 'GET', //metodo HTTP
       headers: {   //aca decimos que devuelve un JSON
           'Accept': 'application/json',
@@ -52,10 +76,10 @@ async function listarUsuarios() {
        }
      });
     const lista  = await respuesta.json();
-    
+
     console.log("contenido lista usuario");
     console.log(JSON.stringify(lista));
-    
+
     //document.write(JSON.stringify(lista));
 
 
@@ -67,12 +91,12 @@ async function listarUsuarios() {
     }
     else{
         console.log("Llenamos la lista");
-        
+
         const tabla = document.querySelector("#datatablesSimple tbody");
         //tabla.innerHTML = "";
-    
+
         lista.forEach(usuario => {
-    
+
             const tr = document.createElement("tr");
             tr.classList.add("tr_usuario");
             tr.innerHTML = `
@@ -83,18 +107,18 @@ async function listarUsuarios() {
                 <td>pruebatexto</td>
                 <td>pruebatexto</td>
             `;
-    
+
             tabla.append(tr);
-            
-           
+
+
         })
 
         //$('#datatablesSimple').DataTable().ajax.reload();
         //BUSCAR COMO RECARGAR EL DATATABLE (Lo de arriba no funciona)
-       
+
         console.log("lista llenada");
     }
-    
+
     return lista;
 }
 
