@@ -1,3 +1,8 @@
+html{
+    height: 96px;
+    overflow-y: hidden;
+}
+
 *{
     margin: 0;
     padding: 0;
@@ -10,7 +15,7 @@ body{
 .form-registrer{
     width: 400px;
     background: #24303c;
-    padding: 40px;
+    padding: 30px;
     margin: auto;
     margin-top: 100px;
     border-radius: 4px;
@@ -56,4 +61,49 @@ body{
     color: white;
     width: 16px 0;
     font-size: 16px;
+}
+
+.logo {
+    width: 70px;
+    height: 70px;
+    margin-left: 4%;
+    margin-top: -5%;
+}
+
+.nav-text {
+    margin-top: -55%;
+    margin-left: 100%;
+    color: black;
+}
+
+.background-register-animated{
+    margin-top: -39%;
+    margin-left: 47%;
+    z-index: 9999999;
+
+    height: 574.6px;
+    width: 800px;
+    background: url(../img/backgrounds/cielo.jpg);
+    background-repeat: no-repeat !important;
+    background-size: cover;
+    background-position: right;
+    transition: 5s;
+
+    animation: backgroundAnimated;
+    animation-direction: alternate-reverse;
+    animation-duration: 30s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-play-state: running;
+    animation-timing-function: ease-in-out;
+
+}
+
+@keyframes backgroundAnimated{
+    0% {background-image: url(../img/backgrounds/cielo_azul.jpg);}
+    20% {background-image: url(../img/backgrounds/descarga.jpg);}
+    40% {background-image: url(../img/backgrounds/cielo.jpg);}
+    60% {background-image: url(../img/backgrounds/cielo1.gif);}
+    80% {background-image: url(../img/backgrounds/cielo2.gif);}
+    100% {background-image: url(../img/backgrounds/cielo3.gif);}
 }

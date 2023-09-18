@@ -1,7 +1,7 @@
 html{
     display: fixed;
     position: block;
-    background: white;
+    background: rgb(255, 255, 255);
     background-repeat: no-repeat;
     background-attachment: fixed;
     height: 3000px;
@@ -23,13 +23,13 @@ transparent {
 .logo {
     width: 70px;
     height: 70px;
-    margin-left: 4%;
+    margin-left: 3%;
 }
 
 .nav-text {
     margin-top: -82%;
     margin-left: 100%;
-    color: black;
+    color: rgb(0, 0, 0);
 }
 
 .box-presentation {
@@ -104,14 +104,13 @@ transparent {
     height: 330px;
     background: url(../img/backgrounds/sun-parallax-1.png);
     background-size: cover;
-
     -webkit-animation: sun 5s infinite linear;
 
     background-attachment: fixed;
     background-size: cover;
 }
 
-@-webkit-keyframes sun {
+webkit-keyframes sun {
     from {
         background-position: left center;
     }
@@ -132,7 +131,7 @@ transparent {
 
 /* Section Parallax 1 */
     
-p{color:#fff;}
+p{color:#ffffff;}
     
 .container-fluid{
     margin-top: 20%;
@@ -173,7 +172,20 @@ p{color:#fff;}
 .text-2{
     background-color: rgba(100, 181, 246, .4);
     margin-left: 120%;
-    width: 500px;
+ 
     height: 600px;
     text-shadow: black 3px 2px 3px;
 }
+.link{
+    color: #000;
+}
+h2{
+    color: #000;
+    font-family: Calibri;
+}
+h3{
+    font-family: Calibri;
+}
+
+
+
