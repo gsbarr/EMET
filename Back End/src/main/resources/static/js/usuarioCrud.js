@@ -34,36 +34,36 @@ function login(){
     let datos = {};
     let codigoResp;
 
-
+    
 
     // Armamos el JSON con los datos del registro
     datos.nombre = inputNombre.value;
     datos.password = inputcontraseña.value;
-
+    
     console.log(JSON.stringify(datos));
     console.log("creando usuario... ");
     // Petición HTTP
-    try{
-        respuesta = fetch('http://localhost:8080/api/usuarios', {
+    try{   
+        respuesta = fetch('http://10.0.1.135:8080/api/usuarios', {
             mode: 'no-cors',
             method: 'POST', //metodo HTTP
             headers: {   //aca decimos que devuelve un JSON
                 'Accept': 'application/json',
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify(datos)     //Acá van los datos del registro
+            body: JSON.stringify(datos)     //Acá van los datos del registro    
         })
         .then(response => {
             codigoResp = response.status;
             console.log("Respuesta de petición: "+response.status);
-
+     
             //recargamos la pagina
             if(codigoResp >= 200 && codigoResp < 300){
             console.log("Recargando pagina...")
             location.reload();
             }
         });
-
+   
     }
     catch (error){
         //hubo un error
@@ -94,18 +94,19 @@ function crearUser(){
     datos.last_name = inputLastName.value;
     datos.email = inputEmail.value;
     datos.password = inputPassword.value;
-
+    
     console.log(JSON.stringify(datos));
     console.log("creando usuario... ");
     // Petición HTTP
-    try{
-        respuesta = fetch('http://localhost:8080/api/usuarios', {
+    try{   
+        respuesta = fetch('localhost:8080/api/usuarios', {
+            mode: 'no-cors',
             method: 'POST', //metodo HTTP
             headers: {   //aca decimos que devuelve un JSON
                 'Accept': 'application/json',
-                "Content-Type": 'application/json',
+                'Content-Type': 'application/json',
             },
-            body: JSON.stringify(datos)     //Acá van los datos del registro
+            body: JSON.stringify(datos)     //Acá van los datos del registro    
         })
         .then(response => {
             codigoResp = response.status;
