@@ -76,9 +76,13 @@ body{
     color: black;
 }
 
+.text-regis{
+    margin-left: 11%;
+}
+
 .background-register-animated{
     margin-left: 41.5%;
-    margin-top: -50%;
+    margin-top: -49%;
     z-index: 9999;
 
     height: 650px;

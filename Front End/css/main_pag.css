@@ -177,14 +177,21 @@ p{color:#ffffff;}
     text-shadow: black 3px 2px 3px;
 }
 .link{
-    color: #000;
+    color: #000000;
+
 }
 h2{
     color: #000;
-    font-family: Calibri;
+    font-family: Arial black;
 }
 h3{
-    font-family: Calibri;
+    font-family: Arial;
+}
+.boton{
+    background-color: #fdfd00;
+    border-radius: 40px;
+    color: #ffffff;
+    border-color: #fdfd00;
 }
 
 
