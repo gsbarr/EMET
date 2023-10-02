@@ -16,8 +16,8 @@ import java.util.Optional;
 
 // UN DAO (Data Object) es la clase que realiza consultas al modelo y realiza operaciones sobre los datos
 
-@Repository
 @Transactional
+@Repository
 public class UserDaoImp implements UserDao {
 
     @PersistenceContext
