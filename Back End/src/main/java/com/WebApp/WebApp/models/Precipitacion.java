@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.util.Calendar;
+import java.util.Date;
 
 @Entity
 @Table(name = "precipitacion")
@@ -22,8 +23,7 @@ public class Precipitacion {
 
     @Getter @Setter
     @Column(name = "fecha_hora")
-    @Temporal(TemporalType.TIMESTAMP)
-    private Calendar fechaHora;
+    private Date fechaHora;
 
     @Getter @Setter
     @ManyToOne(optional = false)

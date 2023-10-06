@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.util.Calendar;
+import java.util.Date;
 
 @Entity
 @Table(name = "presion_atmosferica")
@@ -15,16 +16,19 @@ public class Pre_Atmosferica {
     @Column(name = "id")
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
 
     @Getter @Setter
     @Column(name = "fecha_hora")
-    @Temporal(TemporalType.TIMESTAMP)
-    private Calendar fechaHora;
+    private Date fechaHora;
+
+    @Getter @Setter
+    @Column(name = "presion")
+    private Float presion;
 
     @Getter @Setter
     @Column(name = "altitud")
-    private float altitud;
+    private Float altitud;
 
     @Getter @Setter
     @ManyToOne(optional = false)

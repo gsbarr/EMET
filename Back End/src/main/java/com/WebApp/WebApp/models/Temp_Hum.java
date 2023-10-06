@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.util.Calendar;
+import java.util.Date;
 
 @Entity
 @Table(name = "temp_hum")
@@ -14,20 +15,19 @@ public class Temp_Hum {
     @Column(name = "id")
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
 
     @Getter @Setter
     @Column(name = "valor_temp")
-    private float valorTemp;
+    private Float valorTemp;
 
     @Getter @Setter
     @Column(name = "valor_hum")
-    private float valorHum;
+    private Float valorHum;
 
     @Getter @Setter
     @Column(name = "fecha_hora")
-    @Temporal(TemporalType.TIMESTAMP)
-    private Calendar fechaHora;
+    private Date fechaHora;
 
     @Getter @Setter
     @ManyToOne(optional = false)
