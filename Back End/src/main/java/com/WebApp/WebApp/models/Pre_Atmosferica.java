@@ -1,12 +1,12 @@
 package com.WebApp.WebApp.models;
 
 
+import jakarta.annotation.Nullable;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.util.Calendar;
-import java.util.Date;
+import java.sql.Date;
 
 @Entity
 @Table(name = "presion_atmosferica")
@@ -31,7 +31,7 @@ public class Pre_Atmosferica {
     private Float altitud;
 
     @Getter @Setter
-    @ManyToOne(optional = false)
+    @ManyToOne(optional = true)
     @JoinColumn(name = "fk_locacion")
     private Locacion locacion;
 

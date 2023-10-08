@@ -12,13 +12,11 @@ public class SensorData {
     @Getter @Setter
     private float humidity;
     @Getter @Setter
-    private float precipitacion;
-    @Getter @Setter
     private float presion;
     @Getter @Setter
     private float altitud;
     @Getter @Setter
     private float waterRained;
     @Getter @Setter
-    private Date date;
+    private String date;
 }

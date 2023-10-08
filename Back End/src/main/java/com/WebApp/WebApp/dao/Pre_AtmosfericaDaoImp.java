@@ -20,6 +20,7 @@ public class Pre_AtmosfericaDaoImp implements Pre_AtmosfericaDao{
         pre_atmosEntity.setPresion(presion_atmos);
         pre_atmosEntity.setAltitud(altitud);
         pre_atmosEntity.setFechaHora(fecha_hora);
+        pre_atmosEntity.setLocacion(null);
 
         preAtmosfericaRepo.save(pre_atmosEntity);
 

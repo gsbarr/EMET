@@ -21,6 +21,7 @@ public class Temp_HumDaoImp implements Temp_HumDao{
         temp_humEntity.setValorTemp(temp);
         temp_humEntity.setValorHum(hum);
         temp_humEntity.setFechaHora(fecha_hora);
+        temp_humEntity.setLocacion(null);
 
         temp_humRepo.save(temp_humEntity);
     }

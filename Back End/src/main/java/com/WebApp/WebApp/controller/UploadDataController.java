@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.sql.Date;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 
 @RestController
 @CrossOrigin(origins = "*")
@@ -25,12 +27,20 @@ public class UploadDataController {
         float hum = sensorData.getHumidity();
         float presion = sensorData.getPresion();
         float altitud = sensorData.getAltitud();
-        float precipitacion = sensorData.getPrecipitacion();
-        Date fecha_hora = sensorData.getDate();
+        float precipitacion = sensorData.getWaterRained();
 
-        tempHumDao.save(temp, hum, fecha_hora);
-        preAtmosfericaDao.save(presion, altitud, fecha_hora);
-        precipitacionDao.save(precipitacion, fecha_hora);
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
+        try {
+            java.util.Date utilDate = sdf.parse(sensorData.getDate());
+            Date fecha_hora = new Date(utilDate.getTime());
+            tempHumDao.save(temp, hum, fecha_hora);
+            preAtmosfericaDao.save(presion, altitud, fecha_hora);
+            precipitacionDao.save(precipitacion, fecha_hora);
+        } catch (ParseException e) {
+            // Manejar la excepción aquí (puede imprimir un mensaje de error o tomar otra acción)
+            e.printStackTrace();
+        }
+
     }
 
 }

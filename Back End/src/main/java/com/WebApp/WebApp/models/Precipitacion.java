@@ -1,11 +1,11 @@
 package com.WebApp.WebApp.models;
 
+import jakarta.annotation.Nullable;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.util.Calendar;
-import java.util.Date;
+import java.sql.Date;
 
 @Entity
 @Table(name = "precipitacion")
@@ -26,7 +26,7 @@ public class Precipitacion {
     private Date fechaHora;
 
     @Getter @Setter
-    @ManyToOne(optional = false)
+    @ManyToOne(optional = true)
     @JoinColumn(name = "fk_locacion")
     private Locacion locacion;
 }
