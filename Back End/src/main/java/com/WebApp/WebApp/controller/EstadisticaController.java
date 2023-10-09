@@ -20,7 +20,6 @@ public class EstadisticaController {
 
     @PostMapping
     public List<Estadistica> getList(@RequestBody Map<String, String> fecha_semana){
-        log.info("Body : " + fecha_semana);
         return estadisticaDao.getList(fecha_semana);
     }
 }

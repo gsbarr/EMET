@@ -1,5 +1,6 @@
 package com.WebApp.WebApp.dao;
 
+import com.WebApp.WebApp.controller.SensorData;
 import com.WebApp.WebApp.models.Estadistica;
 
 import java.util.List;
