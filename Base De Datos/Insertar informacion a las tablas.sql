@@ -1,3 +1,8 @@
+insert into titular
+(nombre,apellido,domicilio)
+values
+('dante','slowed','berisso');
+
 insert into locacion
 (nombre,coordenadas,fk_titular,direccion)
 values 
@@ -6,10 +11,6 @@ values
 ('chubut','rawson',1,'ciudad'),
 ('chaco','resistencia',1,'ciudad');
 
-insert into titular
-(nombre,apellido,fk_locacion,domicilio)
-values
-('dante','slowed',1,'berisso');
 
 INSERT INTO estadisticas
 (fecha,temperatura,humedad,presion_atmosferica,precipitaciones,int_solar)
@@ -30,34 +31,34 @@ VALUES
 INSERT INTO temperatura_humedad
 (fecha_hora,val_temp,val_hum,fk_locacion)
 VALUES 
-('21-06-23', 18,9,'la plata'),
-('23-06-23', 22,10,'santiago del estero'),
-('25-06-23', 19,13,'rawson'),
-('27-06-23', 21,11,'resistencia');
+('21-06-23', 18,9,1),
+('23-06-23', 22,10,1),
+('25-06-23', 19,13,1),
+('27-06-23', 21,11,1);
 
 INSERT INTO precipitaciones
 (fecha_hora,fk_locacion,valor_precipitaciones)
 VALUES 
-('21-06-23', 15,'15:30'),
-('23-06-23', 17,'17:40'),
-('25-06-23', 12,'12:50'),
-('27-06-23', 13,'13:25');
+('21-06-23', 1,'15:30'),
+('23-06-23', 1,'17:40'),
+('25-06-23', 1,'12:50'),
+('27-06-23', 1,'13:25');
 
 INSERT into intensidad_solar 
 (fecha_hora,fk_locacion,lumenes,insolacion)
 VALUES
-('21-06-23',12,20,10),
-('23-06-23',14,17,11),
-('25-06-23',16,18,13),
-('27-06-23',18,20,9);
+('21-06-23',1,20,10),
+('23-06-23',1,17,11),
+('25-06-23',1,18,13),
+('27-06-23',1,20,9);
 
 INSERT INTO presion_atmosferica 
 (fecha_hora,fk_locacion,altitud)
 values 
-('21-06-23',2,68),
-('23-06-23',0,79),
-('25-06-23',0,77),
-('17-06-23',0,59);
+('21-06-23',1,68),
+('23-06-23',1,79),
+('25-06-23',1,77),
+('17-06-23',1,59);
 
 insert into provincia
 (provincia)
