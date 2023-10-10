@@ -15,8 +15,8 @@ fecha.anio="2023";
 console.log(JSON.stringify(fecha));
 
   //URL del servicio  -  El codigo espera una respuesta
-  const respuesta = await fetch('http://localhost:8080/api/estadisticas', {
-   method: 'POST', //metodo HTTP
+  const respuesta = await fetch('api/estadistica/1', {
+   method: 'GET', //metodo HTTP
     headers: {   //aca decimos que devuelve un JSON
         'Accept': 'application/json',
         'Content-Type': 'application/json'

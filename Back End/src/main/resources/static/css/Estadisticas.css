@@ -1,0 +1,50 @@
+html{
+    display: fixed;
+    position: block;
+    background: rgb(255, 255, 255);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 3000px;
+}
+
+body {
+    overflow: hidden;
+    overflow-y:auto;
+}
+
+header {
+    position: sticky;
+}
+
+transparent {
+    opacity: 0.87;
+}
+
+.logo {
+    width: 70px;
+    height: 70px;
+    margin-left: 3%;
+}
+
+.nav-text {
+    margin-top: -82%;
+    margin-left: 100%;
+    color: rgb(0, 0, 0);
+}
+
+.chart-bar {
+  position: relative;
+  height: 10rem;
+  width: 100%;
+    
+  
+}
+
+.chart-bar {
+    position: relative;
+    height: 10rem;
+    width: 100%;
+    @include media-breakpoint-up(md) {
+      height: 20rem;
+    }
+  }

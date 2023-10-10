@@ -1,6 +1,6 @@
 html{
     height: 96px;
-    overflow-y: hidden;
+    overflow: hidden;
 }
 
 *{
@@ -20,7 +20,7 @@ body{
     margin-top: 100px;
     border-radius: 4px;
     font-family: 'calibri';
-    color: white;
+    color: black;
     box-shadow: 7px 13px 37px #000;
 }
 .form-registrer h4{
@@ -76,12 +76,16 @@ body{
     color: black;
 }
 
-.background-register-animated{
-    margin-top: -39%;
-    margin-left: 47%;
-    z-index: 9999999;
+.text-regis{
+    margin-left: 11%;
+}
 
-    height: 574.6px;
+.background-register-animated{
+    margin-left: 41.5%;
+    margin-top: -49%;
+    z-index: 9999;
+
+    height: 650px;
     width: 800px;
     background: url(../img/backgrounds/cielo.jpg);
     background-repeat: no-repeat !important;
