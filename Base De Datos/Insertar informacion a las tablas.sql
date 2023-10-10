@@ -1,15 +1,25 @@
+drop table titular;
+
+CREATE TABLE titular (
+    id INT PRIMARY KEY auto_increment,
+    nombre VARCHAR(255),
+    apellido VARCHAR(255),
+    domicilio VARCHAR(255)
+);
 insert into titular
 (nombre,apellido,domicilio)
 values
-('dante','slowed','berisso');
+('dante','slowed','berisso'),
+('lucas','tarela','la plata'),
+('jorge','castro','ensenada');
 
 insert into locacion
 (nombre,coordenadas,fk_titular,direccion)
 values 
-('buenos aires','la plata',1,'berisso'),
+('buenos aires','la plata',2,'ciudad'),
 ('santiago del estero','santiago del estero',1,'ciudad'),
 ('chubut','rawson',1,'ciudad'),
-('chaco','resistencia',1,'ciudad');
+('chaco','resistencia',3,'ciudad');
 
 
 INSERT INTO estadisticas
@@ -18,7 +28,11 @@ values
 ('21-06-23',14,18,30,1,6),
 ('23-06-23',16,19,45,2,4),
 ('25-06-23',12,34,37,5,6),
-('27-06-23',14,40,42,3,5);
+('27-06-23',14,40,42,3,5),
+('12-07-23',27,23.3, 1010,0.1,420.8),
+('19-08-23',25.5,25.2, 1012.5,2.1,400.3),
+('09-10-23',22.1,58.7, 1014.5,0.8,330.7),
+('10-10-23',18.4,70.7, 1026.5,74.2,252.3);
 
 INSERT INTO usuario
 (usuario,contraseña,correo)
