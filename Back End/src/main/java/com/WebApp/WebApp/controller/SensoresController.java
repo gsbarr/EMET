@@ -1,19 +1,19 @@
 package com.WebApp.WebApp.controller;
 
-import com.WebApp.WebApp.dao.UploadDataDaoImp;
+import com.WebApp.WebApp.dao.SensoresDaoImp;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @CrossOrigin(origins = "*")
 @RequestMapping(value = "api/upload")
-public class UploadDataController {
+public class SensoresController {
 
     @Autowired
-    private UploadDataDaoImp uploadDataDao;
+    private SensoresDaoImp sensoresDaoImp;
 
     @PostMapping
     public void saveData(@RequestBody SensorData sensorData){
-        uploadDataDao.saveDataSensor(sensorData);
+        sensoresDaoImp.saveDataSensor(sensorData);
     }
 }

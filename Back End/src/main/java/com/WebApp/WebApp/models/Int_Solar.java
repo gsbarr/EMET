@@ -14,15 +14,15 @@ public class Int_Solar {
     @Column(name = "id")
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
 
     @Getter @Setter
     @Column(name = "lumenes")
-    private float lumenes;
+    private Float lumenes;
 
     @Getter @Setter
     @Column(name = "insolacion")
-    private float insolacion;
+    private Float insolacion;
 
     @Getter @Setter
     @Column(name = "fecha_hora")

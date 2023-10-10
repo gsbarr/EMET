@@ -51,7 +51,6 @@ public class UserDaoImp implements UserDao {
         newUser.setApellido(userData.get("last_name"));
         newUser.setEmail(userData.get("email"));
         newUser.setPassword(userData.get("password"));
-        newUser.setDomicilio(null);
 
         //entityManager.merge(newUser);
         userRepo.save(newUser);

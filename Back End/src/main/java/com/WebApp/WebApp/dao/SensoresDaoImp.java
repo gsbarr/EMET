@@ -1,14 +1,17 @@
 package com.WebApp.WebApp.dao;
 
 import com.WebApp.WebApp.controller.SensorData;
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
 import java.sql.Date;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 
-
-public class UploadDataDaoImp implements UploadDataDao{
+@Transactional
+@Repository
+public class SensoresDaoImp implements SensoresDao {
 
     @Autowired  //Inyección de dependencias
     private Temp_HumDaoImp tempHumDao;

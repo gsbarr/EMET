@@ -15,7 +15,7 @@ public class Titular {
     @Column(name = "id")
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
 
     @Getter @Setter
     @Column(name = "nombre")
@@ -34,7 +34,12 @@ public class Titular {
     @JoinColumn(name = "fk_domicilio")
     private Domicilio domicilio;
 
+    //@Getter @Setter
+    //@OneToMany(mappedBy = "titular") //Esta anotacion puede generar un mal rendimiento de la aplicacion
+    //private List<Locacion> locaciones;
+
     @Getter @Setter
-    @OneToMany(mappedBy = "titular") //Esta anotacion puede generar un mal rendimiento de la aplicacion
-    private List<Locacion> locaciones;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "fk_usuario")
+    private Usuario usuario;
 }

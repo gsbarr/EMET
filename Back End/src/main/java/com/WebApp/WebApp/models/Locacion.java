@@ -21,14 +21,14 @@ public class Locacion {
 
     @Getter @Setter
     @Column(name = "coordenadas")
-    private float coordenadas;
+    private Float coordenadas;
 
     @Getter @Setter
     @Column(name = "direccion")
     private String direccion;
 
     @Getter @Setter
-    @ManyToOne(optional = false)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "fk_titular")
     private Titular titular;
 }

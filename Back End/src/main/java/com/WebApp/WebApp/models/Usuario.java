@@ -32,8 +32,5 @@ public class Usuario {
     private String password;
 
     // Columna obtenida por relación con otra tabla
-    @Getter @Setter
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "fk_domicilio")
-    private Domicilio domicilio;
+
 }
