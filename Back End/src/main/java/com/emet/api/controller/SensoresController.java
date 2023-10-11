@@ -1,0 +1,19 @@
+package com.emet.api.controller;
+
+import com.emet.api.dao.SensoresDaoImp;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+@RestController
+@CrossOrigin(origins = "*")
+@RequestMapping(value = "api/upload")
+public class SensoresController {
+
+    @Autowired
+    private SensoresDaoImp sensoresDaoImp;
+
+    @PostMapping
+    public void saveData(@RequestBody SensorData sensorData){
+        sensoresDaoImp.saveDataSensor(sensorData);
+    }
+}
