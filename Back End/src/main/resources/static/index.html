@@ -1,31 +1,47 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
-    <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
-    <link href="css/styles.css" rel="stylesheet" />
-    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
-    <script src="js/tablaUsuarios.js"></script>
-</head>
-<body><div class="container mt-4">
-    <h1>Tabla de Usuarios</h1>
-    <table class="table table-striped" id="userTable">
-        <thead>
-        <tr>
-            <th>ID</th>
-            <th>Nombre</th>
-            <th>Apellido</th>
-            <th>Email</th>
-            <th>Password</th>
-        </tr>
-        </thead>
-        <tbody id="tableBody">
-        <!-- Los datos se agregarán aquí -->
-        </tbody>
-    </table>
-</div>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-</body>
+<html lang="en">
+    <head>
+      <title>Proyecto E.M.E.T.</title>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link href="css\main_pag.css" rel="stylesheet">
+      <link href="css\materialize\css\materialize.css" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js">
+      <link rel="icon" href="img/logos/Logo3.png">
+    </head>
+    <body>
+       <header class="banner navbar-fixed">
+            <nav>
+              <div class="nav-wrapper white">
+                <a href="#" class="brand-logo"><img class="logo" src="img\logos\Logo4.png"><h5 class="nav-text"><b> E.M.E.T</b></h5></a>
+                <ul id="nav-mobile" class="nav-menu">
+                  <div class="row">
+                      <div class="col s10"></div>
+                      <div>
+                        <li><a href="main_page.html" class="link" ><b>INICIO</b></a></li>
+                        <li><a href="contacto.html" class="link" ><b>CONTACTO</b></a></li>
+                      </div>
+                </ul>
+              </div>
+            </nav>
+          </header>
+          <div class="container"> 
+            <h5><b>TODA LA 
+              <br>INFORMACION METEOROLOGICA</b></h5>
+            <br> <br>
+            <center><h2>A tu alcancé</h2></center>
+            <br> <br>
+            <br> <br>
+            <br> <br>
+          <div class="row">
+            <div class="col s6 center-align">
+              <button type="button" onclick="location.href='login.html';" class="boton" style="width:200px; height: 40px;"><b>INICIAR SESION</b></button>
+            </div>
+            <div class="col s6 center-align">
+              <button type="button" onclick="location.href='crearcuenta.html';"class="boton" style="width:200px; height: 40px;"><b>REGISTRARSE</button>  
+            </div>
+          </div>
+        </div>
+    </body>
 </html>

@@ -30,14 +30,39 @@ function number_format(number, decimals, dec_point, thousands_sep) {
 
 inicializarEstadisticas();
 
-function inicializarEstadisticas(){
+async function inicializarEstadisticas(){
+
+fecha_ini = "22/10/2023";
+fecha_fin = "30/10/2023";
+
+  const fechasem = {};
+  fechasem.start_week = fecha_ini;
+  fechasem.end_week = fecha_fin;
+
+
+  
+  console.log(JSON.stringify(fechasem));
+  
+    //URL del servicio  -  El codigo espera una respuesta
+    const respuesta = await fetch('api/estadistica/1', {
+     method: 'GET', //metodo HTTP
+      headers: {   //aca decimos que devuelve un JSON
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+       },
+       body: JSON.stringify(fecha)     //Acá van los datos del registro   
+     });
+    
+    const datos = await respuesta.json();
+  
+
     
 // TEMPERATURA 
 var ctx = document.getElementById("TempGraf");
 var myBarChart = new Chart(ctx, {
   type: 'bar',
   data: {
-    labels: ["January", "February", "March", "April", "May", "June"],
+    labels: ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"],
     datasets: [{
       label: "Revenue",
       backgroundColor: "#4e73df",
