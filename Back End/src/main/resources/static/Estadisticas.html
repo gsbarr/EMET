@@ -7,7 +7,10 @@
       <link href="css\Estadisticas.css" rel="stylesheet">
       <link href="css\materialize\css\materialize.css" rel="stylesheet">
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js">
+
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
       <link rel="icon" href="img/logos/Logo3.png">
       <link rel="stylesheet" href="css/styles.css">
     </head>
@@ -29,8 +32,11 @@
              </nav>
            </header>  
        
+           <label for="start">Start date:</label>
 
 
+
+           
 </div>
 <div class="col-lg-8">
   <div class="card mb-4">
@@ -48,6 +54,11 @@
     </div>
 </div>
 </div>
+<div>
+  <input type="text" class="datepicker">
+</div>
+
+
 
 <!-- Temperatura / Humedad -->
 <div class="card shadow mb-4">
@@ -109,13 +120,31 @@
     </div>
 </div>
 
-
+<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
    
+
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+
+   <script>
+var currYear = (new Date()).getFullYear();
+
+$(document).ready(function() {
+  $(".datepicker").datepicker({
+    defaultDate: new Date(currYear-5,1,31),
+    // setDefaultDate: new Date(2000,01,31),
+    maxDate: new Date(currYear-5,12,31),
+    yearRange: [1928, currYear-5],
+    format: "yyyy/mm/dd"    
+  });
+});
+         
+   </script>
     <!-- Page level plugins -->
     <script src="js/Chart.min.js"></script>
 
-
+   <script src="js/chart-bar-demo.js"></script>
 
    <script src="js/Estadisticas.js"></script>
-
 </body>
+</html>
