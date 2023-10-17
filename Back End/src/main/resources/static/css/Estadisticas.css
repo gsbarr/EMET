@@ -44,21 +44,7 @@ transparent {
     position: relative;
     height: 10rem;
     width: 100%;
-@include media-breakpoint-up(md) {
+    @include media-breakpoint-up(md) {
       height: 20rem;
     }
   }
-
-label {
-    display: block;
-    font:
-      1rem 'Fira Sans',
-      sans-serif;
-  }
-  
-  input,
-  label {
-    margin: 0.4rem 0;
-    
-  }
-  

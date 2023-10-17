@@ -2,6 +2,43 @@
 async function Cargarlocacion(){
     perfil=1;
 
+<<<<<<< Updated upstream
+
+  //URL del servicio  -  El codigo espera una respuesta
+/*  const respuesta = await fetch('api/estadistica/1', {
+   method: 'GET', //metodo HTTP
+    headers: {   //aca decimos que devuelve un JSON
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+     },
+     body: perfil     //Acá van los datos del registro   
+   });
+  
+  const datos = await respuesta.json();
+*/
+datos =JSON.parse(` {
+    "id":1,
+    "nombre":"carlos",
+    "apellido":"juan",
+    "usuario": [{
+      "id":1,
+      "email":"carlos@gmail.com"
+    }],
+    "locacion": [{
+        "id":1,
+        "nombre":"Los talas",
+        "coordenadas":"25 64",
+        "direccion":"carlitos 245"
+    },
+    {
+        "id":2,
+        "nombre":"isla paulino",
+        "coordenadas":"53 62",
+        "direccion":"juan carlos 23"
+    }],
+    "domicilio":"los talas 1345"
+}`);
+=======
   //URL del servicio  -  El codigo espera una respuesta
   const respuesta = await fetch('api/titular/' + perfil, {
   method: 'GET', //metodo HTTP
@@ -31,10 +68,12 @@ const datos = await respuesta.json();
 //     }],
 //     "domicilio":"los talas 1345"
 // }`);
+>>>>>>> Stashed changes
 
     // Obtenemos el div donde vamos a insertas las locaciones
     locacion = document.querySelector(".locacion");
     nombre1 = document.querySelector("#nombre1");
+<<<<<<< Updated upstream
     email1= document.querySelector("#email1");
 
     nombre1.innerHTML = datos["nombre"];
@@ -93,6 +132,11 @@ const datos = await respuesta.json();
         `;
     });
     email1.innerHTML = datos.usuario["email"];
+=======
+
+    nombre1.innerHTML = datos["nombre"];
+    nombre1.innerHTML = datos["direccion"];
+>>>>>>> Stashed changes
 
     datos.locacion.forEach(loc => {
 

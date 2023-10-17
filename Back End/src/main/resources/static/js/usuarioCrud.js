@@ -99,14 +99,69 @@ function crearUser(){
     console.log("creando usuario... ");
     // Petición HTTP
     try{   
-        respuesta = fetch('localhost:8080/api/usuarios', {
-            mode: 'no-cors',
+        respuesta = fetch('api/usuarios', {
+            
             method: 'POST', //metodo HTTP
             headers: {   //aca decimos que devuelve un JSON
                 'Accept': 'application/json',
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify(datos)     //Acá van los datos del registro    
+        })
+        .then(response => {
+            codigoResp = response.status;
+            console.log("Respuesta de petición: "+response.status);
+
+            //recargamos la pagina
+            if(codigoResp >= 200 && codigoResp < 300){
+            alert("Usuario registrado correctamente");
+            console.log("Recargando pagina...")
+            location.reload();
+            }
+        });
+    }
+    catch (error){
+        //hubo un error
+        console.log("Error en registro: " + error);
+    }
+
+}
+
+
+//funcion para crear nuevo usuario
+function infoPerfil(){
+
+    inputName = document.querySelector("#nombres");
+    inputLastName = document.querySelector("#apellidos");
+    inputEmail = document.querySelector("#correo");
+    inputPassword = document.querySelector("#contraseña");
+    inputPasswordConfirm = document.querySelector("#confcontraseña");
+    let datos = {};
+    let codigoResp;
+
+    // Verifico si las password coinciden
+    if (inputPassword.value != inputPasswordConfirm.value){
+        alert("Las contraseñas no coinciden");
+        return;
+    }
+
+    // Armamos el JSON con los datos del registro
+    datos.name = inputName.value;
+    datos.last_name = inputLastName.value;
+    datos.email = inputEmail.value;
+    datos.password = inputPassword.value;
+    
+    console.log(JSON.stringify(datos));
+    console.log("creando usuario... ");
+    // Petición HTTP
+    try{   
+        respuesta = fetch('localhost:8080/api/usuarios?id=1', {
+            mode: 'no-cors',
+            method: 'GET', //metodo HTTP
+            headers: {   //aca decimos que devuelve un JSON
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+            }
         })
         .then(response => {
             codigoResp = response.status;
