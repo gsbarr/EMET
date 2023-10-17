@@ -3,7 +3,7 @@ async function Cargarlocacion(){
     perfil=1;
 
   //URL del servicio  -  El codigo espera una respuesta
-  const respuesta = await fetch('api/titular/' + perfil, {
+  const respuesta = await fetch('api/titulares/' + perfil, {
   method: 'GET', //metodo HTTP
   headers: {   //aca decimos que devuelve un JSON
       'Accept': 'application/json',
