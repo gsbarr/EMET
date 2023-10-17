@@ -3,7 +3,7 @@ async function Cargarlocacion(){
     perfil=1;
 
   //URL del servicio  -  El codigo espera una respuesta
-  const respuesta = await fetch('api/titular/' + perfil, {
+  const respuesta = await fetch('api/titulares/' + perfil, {
   method: 'GET', //metodo HTTP
   headers: {   //aca decimos que devuelve un JSON
       'Accept': 'application/json',
@@ -36,65 +36,17 @@ const datos = await respuesta.json();
     locacion = document.querySelector(".locacion");
     nombre1 = document.querySelector("#nombre1");
     email1= document.querySelector("#email1");
+    razonsocial= document.querySelector("#razonsocial");
+    celular1= document.querySelector("#celular1");
+    direccion3= document.querySelector("#direccion3");
 
     nombre1.innerHTML = datos["nombre"];
-    datos.locacion.forEach(loc => {
-      template2= ` <div class="col-lg-8">
-      <div class="card mb-4">
-        <div class="card-body">
-        <div class="row">
-                <div class="col-sm-3">
-                  <p class="mb-0" id="nombre2">Nombre</p>
-                </div>
-                <div class="col-sm-9">
-                  <p class="text-muted mb-0"></p>
-                </div>
-              </div>
-              <hr>
-              <div class="row">
-                <div class="col-sm-3">
-                  <p class="mb-0" id="email1">Email</p>
-                </div>
-                <div class="col-sm-9">
-                  <p class="text-muted mb-0"></p>
-                </div>
-              </div>
-              <hr>
-              <div class="row">
-                <div class="col-sm-3">
-                  <p class="mb-0" id="telefono1">Telefono</p>
-                </div>
-                <div class="col-sm-9">
-                  <p class="text-muted mb-0"></p>
-                </div>
-              </div>
-              <hr>
-              <div class="row">
-                <div class="col-sm-3">
-                  <p class="mb-0" id="celular1">Celular</p>
-                </div>
-                <div class="col-sm-9">
-                  <p class="text-muted mb-0"></p>
-                </div>
-              </div>
-              <hr>
-              <div class="row">
-                <div class="col-sm-3">
-                  <p class="mb-0" id="direccion3">Direccion</p>
-                </div>
-                <div class="col-sm-9">
-                  <p class="text-muted mb-0"></p>
-                </div>
-              </div>
-            </div>
-          </div>
-          </div>
-        </div>
-        `;
-    });
-    email1.innerHTML = datos.usuario["email"];
+    email1.innerHTML= datos["email"];
+    razonsocial.innerHTML= datos["razonSocial"];
+    celular1.innerHTML= datos["celular"];
+    direccion3.innerHTML= datos["direccion"];
 
-    datos.locacion.forEach(loc => {
+    datos.locaciones.forEach(loc => {
 
         console.log(JSON.stringify(loc["coordenadas"]));
 
