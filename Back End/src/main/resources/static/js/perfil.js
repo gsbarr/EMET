@@ -2,8 +2,9 @@
 async function Cargarlocacion(){
     perfil=1;
 
-  //URL del servicio  -  El codigo espera una respuesta
 <<<<<<< Updated upstream
+
+  //URL del servicio  -  El codigo espera una respuesta
 /*  const respuesta = await fetch('api/estadistica/1', {
    method: 'GET', //metodo HTTP
     headers: {   //aca decimos que devuelve un JSON
@@ -38,6 +39,7 @@ datos =JSON.parse(` {
     "domicilio":"los talas 1345"
 }`);
 =======
+  //URL del servicio  -  El codigo espera una respuesta
   const respuesta = await fetch('api/titular/' + perfil, {
   method: 'GET', //metodo HTTP
   headers: {   //aca decimos que devuelve un JSON
@@ -71,6 +73,7 @@ const datos = await respuesta.json();
     // Obtenemos el div donde vamos a insertas las locaciones
     locacion = document.querySelector(".locacion");
     nombre1 = document.querySelector("#nombre1");
+<<<<<<< Updated upstream
     email1= document.querySelector("#email1");
 
     nombre1.innerHTML = datos["nombre"];
@@ -129,6 +132,11 @@ const datos = await respuesta.json();
         `;
     });
     email1.innerHTML = datos.usuario["email"];
+=======
+
+    nombre1.innerHTML = datos["nombre"];
+    nombre1.innerHTML = datos["direccion"];
+>>>>>>> Stashed changes
 
     datos.locacion.forEach(loc => {
 
