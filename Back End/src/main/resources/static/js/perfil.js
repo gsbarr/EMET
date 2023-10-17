@@ -42,7 +42,7 @@ const datos = await respuesta.json();
 
     nombre1.innerHTML = datos["nombre"];
     email1.innerHTML= datos["email"];
-    razonsocial.innerHTML= datos["razon social"];
+    razonsocial.innerHTML= datos["razonSocial"];
     celular1.innerHTML= datos["celular"];
     direccion3.innerHTML= datos["direccion"];
 
