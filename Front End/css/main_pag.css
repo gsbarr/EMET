@@ -203,6 +203,11 @@ h3{
     padding: 100px;
     width: 550px;
     height: 700px;
+    margin-left: -20%;
+}
+
+.box-icons {
+    color: beige;
 
     margin-top: -45.5%;
     margin-left: 55%;
