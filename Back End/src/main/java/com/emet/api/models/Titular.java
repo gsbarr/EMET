@@ -29,6 +29,10 @@ public class Titular {
     private String apellido;
 
     @Getter @Setter
+    @Column(name = "telefono")
+    private String telefono;
+
+    @Getter @Setter
     @Column(name = "razon_social")
     private String razonSocial;
 

@@ -45,8 +45,7 @@ public class UserDaoImp implements UserDao {
         //¿El domicilio no deberia venir en el JSON?
         //Domicilio dom = entityManager.find(Domicilio.class, userData.get("fk_domicilio"));
 
-        newUser.setNombre(userData.get("name"));
-        newUser.setApellido(userData.get("last_name"));
+        newUser.setUsuario(userData.get("name"));
         newUser.setEmail(userData.get("email"));
         newUser.setPassword(userData.get("password"));
 

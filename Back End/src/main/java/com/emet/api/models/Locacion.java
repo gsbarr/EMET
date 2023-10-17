@@ -22,7 +22,7 @@ public class Locacion {
 
     @Getter @Setter
     @Column(name = "coordenadas")
-    private Float coordenadas;
+    private String coordenadas;
 
     @Getter @Setter
     @Column(name = "direccion")
