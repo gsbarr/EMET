@@ -91,7 +91,7 @@ function crearUser(){
 
     // Armamos el JSON con los datos del registro
     datos.name = inputName.value;
-    datos.last_name = inputLastName.value;
+    //datos.last_name = inputLastName.value;
     datos.email = inputEmail.value;
     datos.password = inputPassword.value;
     
