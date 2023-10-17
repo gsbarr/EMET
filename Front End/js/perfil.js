@@ -35,63 +35,11 @@ const datos = await respuesta.json();
     // Obtenemos el div donde vamos a insertas las locaciones
     locacion = document.querySelector(".locacion");
     nombre1 = document.querySelector("#nombre1");
+   
     email1= document.querySelector("#email1");
 
     nombre1.innerHTML = datos["nombre"];
-    datos.locacion.forEach(loc => {
-      template2= ` <div class="col-lg-8">
-      <div class="card mb-4">
-        <div class="card-body">
-        <div class="row">
-                <div class="col-sm-3">
-                  <p class="mb-0" id="nombre2">Nombre</p>
-                </div>
-                <div class="col-sm-9">
-                  <p class="text-muted mb-0"></p>
-                </div>
-              </div>
-              <hr>
-              <div class="row">
-                <div class="col-sm-3">
-                  <p class="mb-0" id="email1">Email</p>
-                </div>
-                <div class="col-sm-9">
-                  <p class="text-muted mb-0"></p>
-                </div>
-              </div>
-              <hr>
-              <div class="row">
-                <div class="col-sm-3">
-                  <p class="mb-0" id="telefono1">Telefono</p>
-                </div>
-                <div class="col-sm-9">
-                  <p class="text-muted mb-0"></p>
-                </div>
-              </div>
-              <hr>
-              <div class="row">
-                <div class="col-sm-3">
-                  <p class="mb-0" id="celular1">Celular</p>
-                </div>
-                <div class="col-sm-9">
-                  <p class="text-muted mb-0"></p>
-                </div>
-              </div>
-              <hr>
-              <div class="row">
-                <div class="col-sm-3">
-                  <p class="mb-0" id="direccion3">Direccion</p>
-                </div>
-                <div class="col-sm-9">
-                  <p class="text-muted mb-0"></p>
-                </div>
-              </div>
-            </div>
-          </div>
-          </div>
-        </div>
-        `;
-    });
+    
     email1.innerHTML = datos.usuario["email"];
 
     datos.locacion.forEach(loc => {
