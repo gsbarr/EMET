@@ -1,3 +1,5 @@
+use emet;
+
 insert into provincia
 (provincia)
 values
