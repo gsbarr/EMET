@@ -33,8 +33,8 @@ inicializarEstadisticas();
 
 async function inicializarEstadisticas(){
 
-fecha_ini = "22/10/2023";
-fecha_fin = "30/10/2023";
+fecha_ini = "09/10/2023";
+fecha_fin = "16/10/2023";
 
   const fechasem = {};
   fechasem.start_week = fecha_ini;
