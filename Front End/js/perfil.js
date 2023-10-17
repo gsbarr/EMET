@@ -2,45 +2,8 @@
 async function Cargarlocacion(){
     perfil=1;
 
-<<<<<<< Updated upstream
-
   //URL del servicio  -  El codigo espera una respuesta
-/*  const respuesta = await fetch('api/estadistica/1', {
-   method: 'GET', //metodo HTTP
-    headers: {   //aca decimos que devuelve un JSON
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
-     },
-     body: perfil     //Acá van los datos del registro   
-   });
-  
-  const datos = await respuesta.json();
-*/
-datos =JSON.parse(` {
-    "id":1,
-    "nombre":"carlos",
-    "apellido":"juan",
-    "usuario": [{
-      "id":1,
-      "email":"carlos@gmail.com"
-    }],
-    "locacion": [{
-        "id":1,
-        "nombre":"Los talas",
-        "coordenadas":"25 64",
-        "direccion":"carlitos 245"
-    },
-    {
-        "id":2,
-        "nombre":"isla paulino",
-        "coordenadas":"53 62",
-        "direccion":"juan carlos 23"
-    }],
-    "domicilio":"los talas 1345"
-}`);
-=======
-  //URL del servicio  -  El codigo espera una respuesta
-  const respuesta = await fetch('api/titular/' + perfil, {
+  const respuesta = await fetch('api/titulares/' + perfil, {
   method: 'GET', //metodo HTTP
   headers: {   //aca decimos que devuelve un JSON
       'Accept': 'application/json',
@@ -68,75 +31,20 @@ const datos = await respuesta.json();
 //     }],
 //     "domicilio":"los talas 1345"
 // }`);
->>>>>>> Stashed changes
 
     // Obtenemos el div donde vamos a insertas las locaciones
     locacion = document.querySelector(".locacion");
     nombre1 = document.querySelector("#nombre1");
-<<<<<<< Updated upstream
     email1= document.querySelector("#email1");
+    razonsocial= document.querySelector("#razonsocial");
+    celular1= document.querySelector("#celular1");
+    direccion3= document.querySelector("#direccion3");
 
     nombre1.innerHTML = datos["nombre"];
-    datos.locacion.forEach(loc => {
-      template2= ` <div class="col-lg-8">
-      <div class="card mb-4">
-        <div class="card-body">
-        <div class="row">
-                <div class="col-sm-3">
-                  <p class="mb-0" id="nombre2">Nombre</p>
-                </div>
-                <div class="col-sm-9">
-                  <p class="text-muted mb-0"></p>
-                </div>
-              </div>
-              <hr>
-              <div class="row">
-                <div class="col-sm-3">
-                  <p class="mb-0" id="email1">Email</p>
-                </div>
-                <div class="col-sm-9">
-                  <p class="text-muted mb-0"></p>
-                </div>
-              </div>
-              <hr>
-              <div class="row">
-                <div class="col-sm-3">
-                  <p class="mb-0" id="telefono1">Telefono</p>
-                </div>
-                <div class="col-sm-9">
-                  <p class="text-muted mb-0"></p>
-                </div>
-              </div>
-              <hr>
-              <div class="row">
-                <div class="col-sm-3">
-                  <p class="mb-0" id="celular1">Celular</p>
-                </div>
-                <div class="col-sm-9">
-                  <p class="text-muted mb-0"></p>
-                </div>
-              </div>
-              <hr>
-              <div class="row">
-                <div class="col-sm-3">
-                  <p class="mb-0" id="direccion3">Direccion</p>
-                </div>
-                <div class="col-sm-9">
-                  <p class="text-muted mb-0"></p>
-                </div>
-              </div>
-            </div>
-          </div>
-          </div>
-        </div>
-        `;
-    });
-    email1.innerHTML = datos.usuario["email"];
-=======
-
-    nombre1.innerHTML = datos["nombre"];
-    nombre1.innerHTML = datos["direccion"];
->>>>>>> Stashed changes
+    email1.innerHTML= datos["email"];
+    razonsocial.innerHTML= datos["razonSocial"];
+    celular1.innerHTML= datos["celular"];
+    direccion3.innerHTML= datos["direccion"];
 
     datos.locacion.forEach(loc => {
 
