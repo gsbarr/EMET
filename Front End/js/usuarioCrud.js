@@ -99,8 +99,8 @@ function crearUser(){
     console.log("creando usuario... ");
     // Petición HTTP
     try{   
-        respuesta = fetch('localhost:8080/api/usuarios', {
-            mode: 'no-cors',
+        respuesta = fetch('api/usuarios', {
+            
             method: 'POST', //metodo HTTP
             headers: {   //aca decimos que devuelve un JSON
                 'Accept': 'application/json',
@@ -114,6 +114,7 @@ function crearUser(){
 
             //recargamos la pagina
             if(codigoResp >= 200 && codigoResp < 300){
+            alert("Usuario registrado correctamente");
             console.log("Recargando pagina...")
             location.reload();
             }
