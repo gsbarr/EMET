@@ -35,9 +35,16 @@ const datos = await respuesta.json();
     // Obtenemos el div donde vamos a insertas las locaciones
     locacion = document.querySelector(".locacion");
     nombre1 = document.querySelector("#nombre1");
+    email1= document.querySelector("#email1");
+    telefono1= document.querySelector("#telefono1");
+    celular1= document.querySelector("#celular1");
+    direccion3= document.querySelector("#direccion3");
 
     nombre1.innerHTML = datos["nombre"];
-    nombre1.innerHTML = datos["direccion"];
+    email1.innerHTML= datos["email"];
+    telefono1.innerHTML= datos["telefono"];
+    celular1.innerHTML= datos["celular"];
+    direccion3.innerHTML= datos["direccion"]
 
     datos.locacion.forEach(loc => {
 
