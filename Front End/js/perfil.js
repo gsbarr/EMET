@@ -36,15 +36,15 @@ const datos = await respuesta.json();
     locacion = document.querySelector(".locacion");
     nombre1 = document.querySelector("#nombre1");
     email1= document.querySelector("#email1");
-    telefono1= document.querySelector("#telefono1");
+    razonsocial= document.querySelector("#razonsocial");
     celular1= document.querySelector("#celular1");
     direccion3= document.querySelector("#direccion3");
 
     nombre1.innerHTML = datos["nombre"];
     email1.innerHTML= datos["email"];
-    telefono1.innerHTML= datos["telefono"];
+    razonsocial.innerHTML= datos["razon social"];
     celular1.innerHTML= datos["celular"];
-    direccion3.innerHTML= datos["direccion"]
+    direccion3.innerHTML= datos["direccion"];
 
     datos.locacion.forEach(loc => {
 
