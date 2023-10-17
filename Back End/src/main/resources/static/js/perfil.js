@@ -46,7 +46,7 @@ const datos = await respuesta.json();
     celular1.innerHTML= datos["celular"];
     direccion3.innerHTML= datos["direccion"];
 
-    datos.locacion.forEach(loc => {
+    datos.locaciones.forEach(loc => {
 
         console.log(JSON.stringify(loc["coordenadas"]));
 
