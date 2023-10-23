@@ -14,11 +14,11 @@ public class Precipitacion {
     @Column(name = "id")
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
 
     @Getter @Setter
     @Column(name = "valor_precipi_mm")
-    private float valorPrecipiMm;
+    private Float valorPrecipiMm;
 
     @Getter @Setter
     @Column(name = "fecha_hora")

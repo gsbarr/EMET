@@ -1,4 +1,4 @@
-package com.emet.api.controller;
+package com.emet.api.dto;
 
 import lombok.Getter;
 import lombok.Setter;

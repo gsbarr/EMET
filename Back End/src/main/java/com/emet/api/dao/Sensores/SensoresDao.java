@@ -1,6 +1,6 @@
-package com.emet.api.dao;
+package com.emet.api.dao.Sensores;
 
-import com.emet.api.controller.SensorData;
+import com.emet.api.dto.SensorData;
 
 public interface SensoresDao {
 

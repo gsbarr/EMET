@@ -1,6 +1,7 @@
 package com.emet.api.controller;
 
-import com.emet.api.dao.UserDaoImp;
+import com.emet.api.dao.Usuario.UserDaoImp;
+import com.emet.api.dto.UsuarioData;
 import com.emet.api.models.Usuario;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -31,7 +32,7 @@ public class UserController {
 
     //@RequestMapping(value = "api/usuarios", method = RequestMethod.POST)
     @PostMapping
-    public ResponseEntity<String> createUser(@RequestBody Map<String, String> nuevoU) {
+    public ResponseEntity<String> createUser(@RequestBody UsuarioData nuevoU) {
         //Creamos usuario
         userDao.createUser(nuevoU);
         return ResponseEntity.ok("Se ha creado el usuario correctamente");

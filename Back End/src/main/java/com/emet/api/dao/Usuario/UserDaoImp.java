@@ -1,5 +1,6 @@
-package com.emet.api.dao;
+package com.emet.api.dao.Usuario;
 
+import com.emet.api.dto.UsuarioData;
 import com.emet.api.models.Usuario;
 import com.emet.api.repositories.UserRepository;
 import jakarta.persistence.EntityManager;
@@ -31,15 +32,15 @@ public class UserDaoImp implements UserDao {
 
     @Override
     public void deleteUserById(Long id) {
-        //Optional<UserEntity> user = userRepo.findById(id);
         userRepo.deleteById(id);
     }
 
     @Override
-    public void createUser(Map<String, String> userData) {
+    public void createUser(UsuarioData userData) {
         // Preparamos el objeto
         Usuario newUser = new Usuario();
 
+<<<<<<< Updated upstream:Back End/src/main/java/com/emet/api/dao/UserDaoImp.java
         //Buscamos domicilio
         //Cuando intenta buscar el domicilio explota el servidor
         //¿El domicilio no deberia venir en el JSON?
@@ -48,6 +49,12 @@ public class UserDaoImp implements UserDao {
         newUser.setUsuario(userData.get("name"));
         newUser.setEmail(userData.get("email"));
         newUser.setPassword(userData.get("password"));
+=======
+        newUser.setNombre(userData.getNombre());
+        newUser.setApellido(userData.getApellido());
+        newUser.setEmail(userData.getEmail());
+        newUser.setPassword(userData.getPassword());
+>>>>>>> Stashed changes:Back End/src/main/java/com/emet/api/dao/Usuario/UserDaoImp.java
 
         //entityManager.merge(newUser);
         userRepo.save(newUser);

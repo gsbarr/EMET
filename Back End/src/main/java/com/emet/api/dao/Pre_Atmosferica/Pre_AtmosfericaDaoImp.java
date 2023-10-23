@@ -1,4 +1,4 @@
-package com.emet.api.dao;
+package com.emet.api.dao.Pre_Atmosferica;
 
 import com.emet.api.models.Pre_Atmosferica;
 import com.emet.api.repositories.Pre_AtmosfericaRepository;

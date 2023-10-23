@@ -1,4 +1,4 @@
-package com.emet.api.dao;
+package com.emet.api.dao.Temp_Hum;
 
 import com.emet.api.models.Temp_Hum;
 import com.emet.api.repositories.Temp_HumRepository;
