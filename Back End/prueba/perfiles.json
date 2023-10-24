@@ -1,0 +1,12 @@
+{
+    "id":1,
+    "nombre":"carlos",
+    "apellido":"juan",
+    "locacion": {
+        "id":1,
+        "nombre":"Los talas",
+        "coordenadas":"25 64",
+        "Direccion":"carlitos 245"
+    },
+    "domicilio":"los talas 1345"
+}

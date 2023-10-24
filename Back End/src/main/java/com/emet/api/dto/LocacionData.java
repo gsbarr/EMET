@@ -1,6 +1,5 @@
 package com.emet.api.dto;
 
-import com.emet.api.models.Titular;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -9,9 +8,13 @@ public class LocacionData {
     @Getter @Setter
     private String nombre;
     @Getter @Setter
-    private Float coordenadas;
+    private String coordenadas;
     @Getter @Setter
     private String direccion;
     @Getter @Setter
-    private Titular titular;
+    private Long titular;
+
+    //public void setTitular_id(Long titular_id) {
+    //    this.titular = titularRepo.findById(titular_id).orElse(null);
+    //}
 }

@@ -1,5 +1,6 @@
 package com.emet.api.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -19,12 +20,12 @@ public class Usuario {
     @Column(name = "usuario")
     private String usuario;
 
-
     @Getter @Setter
     @Column(name = "email")
     private String email;
 
     @Getter @Setter
+    @JsonIgnore
     @Column(name = "password")
     private String password;
 

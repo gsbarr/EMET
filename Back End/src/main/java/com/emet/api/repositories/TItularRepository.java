@@ -6,5 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 
-public interface TItularRepository extends JpaRepository<Titular, Long> {
+public interface TitularRepository extends JpaRepository<Titular, Long> {
 }

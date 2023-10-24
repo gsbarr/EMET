@@ -40,21 +40,9 @@ public class UserDaoImp implements UserDao {
         // Preparamos el objeto
         Usuario newUser = new Usuario();
 
-<<<<<<< Updated upstream:Back End/src/main/java/com/emet/api/dao/UserDaoImp.java
-        //Buscamos domicilio
-        //Cuando intenta buscar el domicilio explota el servidor
-        //¿El domicilio no deberia venir en el JSON?
-        //Domicilio dom = entityManager.find(Domicilio.class, userData.get("fk_domicilio"));
-
-        newUser.setUsuario(userData.get("name"));
-        newUser.setEmail(userData.get("email"));
-        newUser.setPassword(userData.get("password"));
-=======
-        newUser.setNombre(userData.getNombre());
-        newUser.setApellido(userData.getApellido());
+        newUser.setUsuario(userData.getUsuario());
         newUser.setEmail(userData.getEmail());
         newUser.setPassword(userData.getPassword());
->>>>>>> Stashed changes:Back End/src/main/java/com/emet/api/dao/Usuario/UserDaoImp.java
 
         //entityManager.merge(newUser);
         userRepo.save(newUser);
