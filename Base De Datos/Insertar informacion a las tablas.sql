@@ -1,11 +1,4 @@
-drop table titular;
 
-CREATE TABLE titular (
-    id INT PRIMARY KEY auto_increment,
-    nombre VARCHAR(255),
-    apellido VARCHAR(255),
-    domicilio VARCHAR(255)
-);
 insert into titular
 (nombre,apellido,domicilio)
 values

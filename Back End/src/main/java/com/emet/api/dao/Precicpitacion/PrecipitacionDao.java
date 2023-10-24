@@ -1,4 +1,4 @@
-package com.emet.api.dao;
+package com.emet.api.dao.Precicpitacion;
 
 import java.sql.Date;
 

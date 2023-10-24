@@ -1,4 +1,4 @@
-package com.emet.api.dao;
+package com.emet.api.dao.Estadistica;
 
 import com.emet.api.models.Estadistica;
 

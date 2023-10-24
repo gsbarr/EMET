@@ -1,6 +1,6 @@
 package com.emet.api.controller;
 
-import com.emet.api.dao.TitularDaoImp;
+import com.emet.api.dao.Titular.TitularDaoImp;
 import com.emet.api.models.Titular;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;

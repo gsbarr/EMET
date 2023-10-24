@@ -1,6 +1,9 @@
-package com.emet.api.dao;
+package com.emet.api.dao.Sensores;
 
-import com.emet.api.controller.SensorData;
+import com.emet.api.dto.SensorData;
+import com.emet.api.dao.Pre_Atmosferica.Pre_AtmosfericaDaoImp;
+import com.emet.api.dao.Precicpitacion.PrecipitacionDaoImp;
+import com.emet.api.dao.Temp_Hum.Temp_HumDaoImp;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;

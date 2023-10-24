@@ -1,4 +1,4 @@
-package com.emet.api.dao;
+package com.emet.api.dao.Titular;
 
 import com.emet.api.models.Titular;
 import org.springframework.web.bind.annotation.PathVariable;

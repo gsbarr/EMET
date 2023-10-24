@@ -187,7 +187,7 @@ h3{
     font-family: Arial;
 }
 .boton{
-    background-color: #fdfd00;
+    background-color: #ebeb09;
     border-radius: 40px;
     color: #ffffff;
     border-color: #fdfd00;
@@ -199,25 +199,22 @@ h3{
 }
 
 .box-icons{
-    background: beige;
+    background: rgb(236, 236, 223);
     padding: 100px;
     width: 550px;
     height: 700px;
-    margin-left: -20%;
-}
-
-.box-icons {
-    color: beige;
-
-    margin-top: -45.5%;
     margin-left: 55%;
+    margin-top: -41%;
 }
+
 
 .icon {
-    background: white;
+    background-image: url(../img/backgrounds/cielo.jpg);
     border-radius: 10px;
     width: 100px;
     height: 150px;
+
+    background-position: 16.25vh center;
 }
 
 .image-icon{
@@ -226,3 +223,11 @@ h3{
     margin-left: 20%;
     margin-top: 10%;
 }
+
+.stats{
+    background: white;
+    border-radius: 10px;
+    width: 210px;
+    height: 150px;
+}
+

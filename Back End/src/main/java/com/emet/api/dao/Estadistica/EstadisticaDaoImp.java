@@ -1,4 +1,4 @@
-package com.emet.api.dao;
+package com.emet.api.dao.Estadistica;
 
 import com.emet.api.models.Estadistica;
 import com.emet.api.repositories.EstadisticaRepository;
@@ -10,7 +10,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import java.sql.Date;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 

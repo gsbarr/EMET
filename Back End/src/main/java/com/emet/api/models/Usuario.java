@@ -16,12 +16,9 @@ public class Usuario {
     private Long id;
 
     @Getter @Setter
-    @Column(name = "nombre")
-    private String nombre;
+    @Column(name = "usuario")
+    private String usuario;
 
-    @Getter @Setter
-    @Column(name = "apellido")
-    private String apellido;
 
     @Getter @Setter
     @Column(name = "email")

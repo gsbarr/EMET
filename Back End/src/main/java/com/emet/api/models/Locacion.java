@@ -14,7 +14,7 @@ public class Locacion {
     @Column(name = "id")
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
 
     @Getter @Setter
     @Column(name = "nombre")
@@ -22,7 +22,7 @@ public class Locacion {
 
     @Getter @Setter
     @Column(name = "coordenadas")
-    private Float coordenadas;
+    private String coordenadas;
 
     @Getter @Setter
     @Column(name = "direccion")

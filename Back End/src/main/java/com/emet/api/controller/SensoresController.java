@@ -1,6 +1,7 @@
 package com.emet.api.controller;
 
-import com.emet.api.dao.SensoresDaoImp;
+import com.emet.api.dao.Sensores.SensoresDaoImp;
+import com.emet.api.dto.SensorData;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

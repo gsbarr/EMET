@@ -1,4 +1,4 @@
-package com.emet.api.dao;
+package com.emet.api.dao.Precicpitacion;
 
 import com.emet.api.models.Precipitacion;
 import com.emet.api.repositories.PrecipitacionRepository;

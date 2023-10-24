@@ -1,6 +1,6 @@
 package com.emet.api.controller;
 
-import com.emet.api.dao.EstadisticaDaoImp;
+import com.emet.api.dao.Estadistica.EstadisticaDaoImp;
 import com.emet.api.models.Estadistica;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;

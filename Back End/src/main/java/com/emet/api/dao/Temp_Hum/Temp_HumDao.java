@@ -1,4 +1,4 @@
-package com.emet.api.dao;
+package com.emet.api.dao.Temp_Hum;
 
 import java.sql.Date;
 

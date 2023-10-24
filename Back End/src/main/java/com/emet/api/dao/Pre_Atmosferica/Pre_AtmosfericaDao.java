@@ -1,4 +1,4 @@
-package com.emet.api.dao;
+package com.emet.api.dao.Pre_Atmosferica;
 
 import java.sql.Date;
 

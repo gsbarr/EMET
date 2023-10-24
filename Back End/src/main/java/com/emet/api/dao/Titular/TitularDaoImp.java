@@ -1,4 +1,4 @@
-package com.emet.api.dao;
+package com.emet.api.dao.Titular;
 
 import com.emet.api.models.Titular;
 import com.emet.api.repositories.TItularRepository;
