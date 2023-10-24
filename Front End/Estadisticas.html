@@ -16,6 +16,7 @@
     </head>
 
     <body>
+
         <header class="banner navbar-fixed">
              <nav>
                <div class="nav-wrapper white">
@@ -25,19 +26,20 @@
                        <div class="col s10"></div>
                        <div>
                          <li><a href="main_page.html" class="link" ><b>INICIO</b></a></li>
-                         <li><a href="contacto.html" class="link" ><b>CONTACTO</b></a></li>
+                         
                        </div>
                  </ul>
                </div>
              </nav>
            </header>  
        
-           <label for="start">Start date:</label>
+           <label for="start">:</label>
 
 
 
            
-</div>
+           <div class="container">
+
 <div class="col-lg-8">
   <div class="card mb-4">
     <div class="card-body">
@@ -55,6 +57,7 @@
 </div>
 </div>
 <div>
+  
   <label for="week"><h2>Seleccione la Semana deseada:</h2></label>
 
 <input type="week" name="week" id="camp-week" min="2023-W18" max="2023-W26" required />
@@ -62,88 +65,82 @@
 </div>
 
 
-
+<div class="row">
+  <div class="col s6"> 
 <!-- Temperatura / Humedad -->
 <div class="card shadow mb-4">
     <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary">Temperatura / Humedad -- Semana del 09/10/23 al 15/10/23</h6>
+        <h4 class="m-0 font-weight-bold text-primary">Temperatura / Humedad</h4>
     </div>
     <div class="card-body">
         <div class="chart-bar">
             <canvas id="TempGraf"></canvas>
         </div>
         <hr>
-        Styling for the bar chart can be found in the
-        <code>/js/demo/chart-bar-demo.js</code> file.
+        
+        <code></code> 
     </div>
 </div>
+  </div>
 
-<div>
-  <label for="week"><h2>Seleccione la Semana deseada:</h2></label>
 
-<input type="week" name="week" id="camp-week" min="2023-W18" max="2023-W26" required />
 
-</div>
 
+<div class="col s6"> 
 <!-- Precipitaciones -->
 <div class="card shadow mb-4">
     <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary">Precipitaciones -- Semana del 09/10/23 al 15/10/23</h6>
+        <h4 class="m-0 font-weight-bold text-primary">Precipitaciones </h4>
     </div>
     <div class="card-body">
         <div class="chart-bar">
             <canvas id="PrecipGraf"></canvas>
         </div>
         <hr>
-        Styling for the bar chart can be found in the
-        <code>/js/demo/chart-bar-demo.js</code> file.
+        
     </div>
 </div>
-
-<div>
-  <label for="week"><h2>Seleccione la Semana deseada:</h2></label>
-
-<input type="week" name="week" id="camp-week" min="2023-W18" max="2023-W26" required />
+</div>
 
 </div>
 
+
+<div class="row">
+  <div class="col s6">  
 <!-- Intensidad solar -->
 <div class="card shadow mb-4">
     <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary">Intensidad Solar -- Semana del 09/10/23 al 15/10/23</h6>
+        <h4 class="m-0 font-weight-bold text-primary">Intensidad Solar </h4>
     </div>
     <div class="card-body">
         <div class="chart-bar">
             <canvas id="SolarGraf"></canvas>
         </div>
         <hr>
-        Styling for the bar chart can be found in the
-        <code>/js/demo/chart-bar-demo.js</code> file.
+       
     </div>
 </div>
-
-<div>
-  <label for="week"><h2>Seleccione la Semana deseada:</h2></label>
-
-<input type="week" name="week" id="camp-week" min="2023-W18" max="2023-W26" required />
-
 </div>
 
+
+<div class="col s6"> 
 <!-- PResión atmosférica -->
 <div class="card shadow mb-4">
     <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary">Presión Atmosférica -- Semana del 09/10/23 al 15/10/23</h6>
+        <h4 class="m-0 font-weight-bold text-primary">Presión Atmosférica </h4>
     </div>
     <div class="card-body">
         <div class="chart-bar">
             <canvas id="PresGraf"></canvas>
         </div>
         <hr>
-        Styling for the bar chart can be found in the
-        <code>/js/demo/chart-bar-demo.js</code> file.
+        
     </div>
 </div>
+</div>
 
+
+</div>
 <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
    
 

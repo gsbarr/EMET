@@ -52,7 +52,9 @@ const datos = await respuesta.json();
 
         console.log(JSON.stringify(loc["coordenadas"]));
 
-        template = `<div class="col-lg-8">
+        template = `<form action="Estadisticas.html" method="GET" name="formularioloc"> <input type="Hidden" value="${loc[id]}">
+        <a href="Estadisticas.html" onclick="document.formularioloc.submit()">
+       <div class="col-lg-8">
         <div class="card mb-4">
           <div class="card-body">
             <div class="row">
@@ -73,6 +75,8 @@ const datos = await respuesta.json();
         </div>
         </div>
       </div>
+      </form>
+      </a>
         `;
         locacion.innerHTML += template;
 
