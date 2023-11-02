@@ -1,9 +1,11 @@
-package com.emet.api.dto;
+package com.emet.api.Locations;
+
+import com.emet.api.Titular.Titular;
 
 import lombok.Getter;
 import lombok.Setter;
 
-public class LocacionData {
+public class LocationData {
 
     @Getter @Setter
     private String nombre;

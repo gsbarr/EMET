@@ -1,8 +1,9 @@
-package com.emet.api.models;
+package com.emet.api.Titular;
 
-
+import com.emet.api.Locations.Location;
+import com.emet.api.User.User;
+import com.emet.api.models.Domicilio;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -14,41 +15,49 @@ import java.util.List;
 @Table(name = "titular")
 public class Titular {
 
-    @Getter @Setter
+    @Getter
+    @Setter
     @Column(name = "id")
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Getter @Setter
+    @Getter
+    @Setter
     @Column(name = "nombre")
     private String nombre;
 
-    @Getter @Setter
+    @Getter
+    @Setter
     @Column(name = "apellido")
     private String apellido;
 
-    @Getter @Setter
+    @Getter
+    @Setter
     @Column(name = "telefono")
     private String telefono;
 
-    @Getter @Setter
+    @Getter
+    @Setter
     @Column(name = "razon_social")
     private String razonSocial;
 
-    @Getter @Setter
+    @Getter
+    @Setter
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "fk_domicilio")
     private Domicilio domicilio;
 
-    @Getter @Setter
-    @OneToMany(mappedBy = "titular") //Esta anotacion puede generar un mal rendimiento de la aplicacion
-    @JsonManagedReference //Evita el json en bucle
-    private List<Locacion> locaciones;
+    @Getter
+    @Setter
+    @OneToMany(mappedBy = "titular") // Esta anotacion puede generar un mal rendimiento de la aplicacion
+    @JsonManagedReference // Evita el json en bucle
+    private List<Location> locaciones;
 
-    @Getter @Setter
+    @Getter
+    @Setter
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "fk_usuario")
     @JsonIgnore
-    private Usuario usuario;
+    private User usuario;
 }

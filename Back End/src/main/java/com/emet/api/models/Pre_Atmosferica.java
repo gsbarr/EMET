@@ -7,6 +7,8 @@ import lombok.Setter;
 
 import java.sql.Date;
 
+import com.emet.api.Locations.Location;
+
 @Entity
 @Table(name = "presion_atmosferica")
 public class Pre_Atmosferica {
@@ -32,6 +34,6 @@ public class Pre_Atmosferica {
     @Getter @Setter
     @ManyToOne(optional = true)
     @JoinColumn(name = "fk_locacion")
-    private Locacion locacion;
+    private Location locacion;
 
 }

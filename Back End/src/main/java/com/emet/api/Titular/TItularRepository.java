@@ -1,6 +1,5 @@
-package com.emet.api.repositories;
+package com.emet.api.Titular;
 
-import com.emet.api.models.Titular;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

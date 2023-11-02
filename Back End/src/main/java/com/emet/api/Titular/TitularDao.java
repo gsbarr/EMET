@@ -1,6 +1,5 @@
-package com.emet.api.dao.Titular;
+package com.emet.api.Titular;
 
-import com.emet.api.models.Titular;
 import org.springframework.web.bind.annotation.PathVariable;
 
 public interface TitularDao {

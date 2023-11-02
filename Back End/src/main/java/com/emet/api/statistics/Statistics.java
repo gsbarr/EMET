@@ -1,4 +1,4 @@
-package com.emet.api.models;
+package com.emet.api.statistics;
 
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -8,34 +8,41 @@ import java.util.Date;
 
 @Entity
 @Table(name = "estadisticas")
-public class Estadistica {
+public class Statistics {
 
-    @Getter @Setter
+    @Getter
+    @Setter
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Getter @Setter
+    @Getter
+    @Setter
     @Column
     private Float temp;
 
-    @Getter @Setter
+    @Getter
+    @Setter
     @Column
     private Float hum;
 
-    @Getter @Setter
+    @Getter
+    @Setter
     @Column
     private Float pre_atmos;
 
-    @Getter @Setter
+    @Getter
+    @Setter
     @Column
     private Float precipitacion;
 
-    @Getter @Setter
+    @Getter
+    @Setter
     @Column
     private Float int_solar;
 
-    @Getter @Setter
+    @Getter
+    @Setter
     @Column(name = "fecha")
     private Date fecha;
 }

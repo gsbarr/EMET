@@ -1,6 +1,7 @@
-package com.emet.api.models;
+package com.emet.api.Locations;
 
 
+import com.emet.api.Titular.Titular;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -8,7 +9,7 @@ import lombok.Setter;
 
 @Entity
 @Table(name = "locacion")
-public class Locacion {
+public class Location {
 
     @Getter @Setter
     @Column(name = "id")
