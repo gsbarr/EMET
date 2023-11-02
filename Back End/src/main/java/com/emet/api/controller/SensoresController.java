@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@CrossOrigin(origins = "*")
+
 @RequestMapping(value = "api/upload")
 public class SensoresController {
 
@@ -14,7 +14,7 @@ public class SensoresController {
     private SensoresDaoImp sensoresDaoImp;
 
     @PostMapping
-    public void saveData(@RequestBody SensorData sensorData){
+    public void saveData(@RequestBody SensorData sensorData) {
         sensoresDaoImp.saveDataSensor(sensorData);
     }
 }

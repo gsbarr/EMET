@@ -6,6 +6,8 @@ import lombok.Setter;
 
 import java.util.Calendar;
 
+import com.emet.api.Locations.Location;
+
 @Entity
 @Table(name = "int_solar")
 public class Int_Solar {
@@ -32,5 +34,5 @@ public class Int_Solar {
     @Getter @Setter
     @ManyToOne(optional = false)
     @JoinColumn(name = "fk_locacion")
-    private Locacion locacion;
+    private Location locacion;
 }
