@@ -1,0 +1,72 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regis_local</title>
+    <link rel="stylesheet" href="css/crearcuenta.css">
+    <link rel="stylesheet" href="css/materialize/css/materialize.css">
+</head>
+<body>
+    <container>
+        <header class="banner navbar-fixed">
+          <nav class="background-navbar z-depth-0 transparent">
+            <div class="nav-wrapper transparent">
+              <a href="main_page.html" class="brand-logo"><img class="logo" src="img\logos\Logo4-pag.png"><h5 class="nav-text"><b> E.M.E.T</b></h5></a>
+            </div>
+          </nav>
+        </header>
+          
+        <div class="row">
+          <div class="input-field col s4">
+            <input id="lugar" name="nom_lugar" style="color:black;" class="validate">
+            <label for="email">Nombre del lugar</label>
+          </div>
+        </div>
+              <div class="row">
+                <div class="input-field col s4">
+                  <input id="fk_titular" name="titular" style="color:black;" class="validate">
+                  <label for="email">Titular</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s4">
+                  <input id="direc" name="direccion" style="color:black;" class="validate">
+                  <label for="direc">Dirección</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s4">
+                  <input id="coordenadas" name="coordenadas" class="validate" style="color:black;">
+                  <label for="cord">Coordenadas</label>
+                </div>
+              </div>
+            </form>
+          </div>
+        
+        <div class="row">
+            <form class="col s12 register">
+                <div class="row">
+                    <div class="input-field col s4">
+                        <a href="perfil.html"  class="waves-effect waves-light btn" style="margin-left: 40%; margin-top: 1%" onclick="crearUser()">Agregar localizacion </a>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        
+        <div class="background-register-animated"></div>
+      </container>
+
+      </form>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('input#input_text, textarea#textarea2').characterCounter();
+        });
+    </script>
+
+    <script src="js/usuarioCrud.js"></script>
+</body>
+</html>

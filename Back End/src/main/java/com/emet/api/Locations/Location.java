@@ -3,9 +3,12 @@ package com.emet.api.Locations;
 
 import com.emet.api.Titular.Titular;
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+
+import java.util.List;
 
 @Entity
 @Table(name = "locacion")
@@ -34,4 +37,9 @@ public class Location {
     @JsonBackReference //Evita el json en bucle
     @JoinColumn(name = "fk_titular")
     private Titular titular;
+
+    @Getter @Setter
+    @OneToMany(mappedBy = "locacion")
+    @JsonManagedReference
+    private List<Estadistica> estadisticas;
 }

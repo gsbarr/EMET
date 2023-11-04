@@ -44,5 +44,4 @@ public class UserController {
     public void deleteUser(@PathVariable Long id) {
         userDao.deleteUserById(id);
     }
-
 }
