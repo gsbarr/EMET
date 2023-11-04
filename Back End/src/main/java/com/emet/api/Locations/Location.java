@@ -1,7 +1,7 @@
 package com.emet.api.Locations;
 
-
 import com.emet.api.Titular.Titular;
+import com.emet.api.statistics.Statistics;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
@@ -14,32 +14,38 @@ import java.util.List;
 @Table(name = "locacion")
 public class Location {
 
-    @Getter @Setter
+    @Getter
+    @Setter
     @Column(name = "id")
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Getter @Setter
+    @Getter
+    @Setter
     @Column(name = "nombre")
     private String nombre;
 
-    @Getter @Setter
+    @Getter
+    @Setter
     @Column(name = "coordenadas")
     private String coordenadas;
 
-    @Getter @Setter
+    @Getter
+    @Setter
     @Column(name = "direccion")
     private String direccion;
 
-    @Getter @Setter
+    @Getter
+    @Setter
     @ManyToOne(fetch = FetchType.LAZY)
-    @JsonBackReference //Evita el json en bucle
+    @JsonBackReference // Evita el json en bucle
     @JoinColumn(name = "fk_titular")
     private Titular titular;
 
-    @Getter @Setter
+    @Getter
+    @Setter
     @OneToMany(mappedBy = "locacion")
     @JsonManagedReference
-    private List<Estadistica> estadisticas;
+    private List<Statistics> estadisticas;
 }

@@ -50,7 +50,7 @@ public class AuthController {
         try {
             response = authService.register(request);
         } catch (DataIntegrityViolationException e) {
-            return new ResponseEntity<>(errorResponse("A user with that email or username already exists."),
+            return new ResponseEntity<>(errorResponse("A user with that email already exists."),
                     HttpStatus.BAD_REQUEST);
         }
         return new ResponseEntity<>(response, HttpStatus.CREATED);

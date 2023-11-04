@@ -1,5 +1,6 @@
 package com.emet.api.statistics;
 
+import com.emet.api.Locations.Location;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -47,9 +48,10 @@ public class Statistics {
     @Column(name = "fecha")
     private Date fecha;
 
-    @Getter @Setter
+    @Getter
+    @Setter
     @ManyToOne(fetch = FetchType.LAZY)
     @JsonBackReference
     @JoinColumn(name = "fk_locacion")
-    private Locacion locacion;
+    private Location locacion;
 }
