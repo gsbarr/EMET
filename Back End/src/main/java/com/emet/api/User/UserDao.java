@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface UserDao {
 
-    void createUser(UsuarioData user);
+    void createUser(User_data user);
 
     User getUserById(@PathVariable Long id);
 

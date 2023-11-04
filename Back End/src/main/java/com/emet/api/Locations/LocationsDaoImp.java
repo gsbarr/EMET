@@ -2,15 +2,22 @@ package com.emet.api.Locations;
 
 public class LocationsDaoImp implements LocationsDao {
 
-    @Override
-    public void save() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'save'");
-    }
+    private LocationsRepository locationsRepository;
 
     @Override
     public Location getLocacionById(Long id) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getLocacionById'");
+        Location loc = locationsRepository.findById(id).orElse(null);
+        return loc;
+    }
+
+    @Override
+    public void saveLocation(LocationData data) {
+        Location loc = new Location();
+        loc.setNombre(data.getNombre());
+        loc.setTitular(data.getTitular());
+        loc.setDireccion(data.getDireccion());
+        loc.setCoordenadas(data.getCoordenadas());
+
+        locationsRepository.save(loc);
     }
 }

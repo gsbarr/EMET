@@ -7,12 +7,16 @@ import lombok.Setter;
 
 public class LocationData {
 
-    @Getter @Setter
+    @Getter
+    @Setter
     private String nombre;
-    @Getter @Setter
-    private Float coordenadas;
-    @Getter @Setter
+    @Getter
+    @Setter
+    private String coordenadas;
+    @Getter
+    @Setter
     private String direccion;
-    @Getter @Setter
+    @Getter
+    @Setter
     private Titular titular;
 }

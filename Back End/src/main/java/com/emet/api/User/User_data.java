@@ -3,7 +3,7 @@ package com.emet.api.User;
 import lombok.Getter;
 import lombok.Setter;
 
-public class UsuarioData {
+public class User_data {
 
     @Getter
     @Setter

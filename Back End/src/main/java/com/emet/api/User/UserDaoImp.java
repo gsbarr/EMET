@@ -1,13 +1,10 @@
 package com.emet.api.User;
 
-import jakarta.persistence.EntityManager;
-import jakarta.persistence.PersistenceContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
-import java.util.Optional;
 
 // UN DAO (Data Object) es la clase que realiza consultas al modelo y realiza operaciones sobre los datos
 
@@ -15,8 +12,6 @@ import java.util.Optional;
 @Repository
 public class UserDaoImp implements UserDao {
 
-    @PersistenceContext
-    private EntityManager entityManager;
     @Autowired
     private UserRepository userRepo;
 
@@ -33,7 +28,7 @@ public class UserDaoImp implements UserDao {
     }
 
     @Override
-    public void createUser(UsuarioData userData) {
+    public void createUser(User_data userData) {
         // Preparamos el objeto
         User newUser = new User();
 
@@ -51,11 +46,10 @@ public class UserDaoImp implements UserDao {
         // Una variable Optional contempla que pueda ser nula
         // En este caso, la usamos porque quizás no exista usuario que coincida con el
         // ID
-        Optional<User> user = userRepo.findById(id);
+        return userRepo.findById(id).orElse(null);
         // Optional.get() devuelve el valor si existe, y devuelve una excepción si no
         // existe
         // return (user.isPresent()) ? user.get() : null;
-        return user.orElse(null);
     }
 
 }
