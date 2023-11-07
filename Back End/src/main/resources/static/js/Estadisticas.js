@@ -447,3 +447,26 @@ var myBarChart = new Chart(ctx, {
 
 }
 
+async function Cargarlocacion_Est(id_locacion){
+
+
+//URL del servicio  -  El codigo espera una respuesta
+const respuesta = await fetch('api/locaciones/' + id_locacion, {
+method: 'GET', //metodo HTTP
+headers: {   //aca decimos que devuelve un JSON
+    'Accept': 'application/json',
+    'Content-Type': 'application/json'
+  }
+});
+
+const datos = await respuesta.json();
+
+
+  nombrepais = document.querySelector("#pais");
+  nombreprovincia = document.querySelector("#provincia");
+  nombreciudad = document.querySelector("#ciudad");
+
+  nombrepais.innerHTML = $datos["pais"];
+  nombreprovincia.innerHTML = $datos["provincia"];
+  nombreciudad.innerHTML = $datos["ciudad"];
+}
