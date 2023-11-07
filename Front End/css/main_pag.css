@@ -1,3 +1,10 @@
+:root {
+    --default-background: rgb(0, 0, 30);
+    --color: white;
+    --rad-bg-dark: rgb(0, 0, 105);
+    --rad-bg-data: rgb(0, 0, 161);
+}
+
 html{
     display: fixed;
     position: block;
@@ -231,3 +238,101 @@ h3{
     height: 150px;
 }
 
+.progress-bar {
+    width: 200px;
+    height: 15px;
+    border-radius: 100px 100px 0 0;
+    background-color: lightgray;
+    position: relative; 
+
+    margin-top: 30%;
+    margin-left: 2%;
+    overflow: hidden;
+  }
+  
+  .progreso {
+    width: 50%;
+    height: 100%;
+    background-color: rgb(240, 211, 117);
+    border-radius: 10px 10px 0 0;
+    top: 0;
+    left: 0;
+  }
+
+  .graph-container,
+.graphic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+
+.graph-container {
+    position: relative;
+    margin: 20pt;
+}
+
+.graphic {
+    background-image: linear-gradient(rgb(192, 188, 179) 50%, rgb(240, 211, 117) 50%);
+    transform: rotate(120deg);
+    animation: rotate 1.5s linear;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(180deg);
+    }
+}
+
+.data,
+.data::after {
+    position: absolute;
+    background-color: white;
+}
+
+.data {
+    width: 50%;
+    height: 50%;
+    border-radius: 50%;
+    top: 12.5%;
+    left: 25%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+.data::after {
+    content: "";
+    width: 150px;
+    height: 40px;
+    top: 50%;
+    z-index: -1;
+}
+
+.graph-group {
+    width: 50% auto;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+p {
+    margin: 0;
+}
+
+.input {
+    display: flex;
+}
+
+.w3-input {
+    margin-right: 20pt;
+}
+
+.bar-uvindex{
+    margin-left: -21.2%;
+    margin-top: -15%;
+}
