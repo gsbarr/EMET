@@ -46,9 +46,9 @@
           <p class="mb-0"> <h1>Locacion:</h1></p>
         </div>
         <div class="col-sm-9">
-          <p class="text-muted mb-0"><h1>Argentina</h1></p>
-          <p class="text-muted mb-0"><h1>BS.AS</h1></p>
-          <p class="text-muted mb-0"><h1>La Plata</h1></p>
+          <p class="text-muted mb-0" id="pais"><h1>Argentina</h1></p>
+          <p class="text-muted mb-0" id="provincia"><h1>BS.AS</h1></p>
+          <p class="text-muted mb-0" id="ciudad"><h1>La Plata</h1></p>
         </div>
       </div>
     </div>
@@ -137,6 +137,17 @@ $(document).ready(function() {
     yearRange: [1928, currYear-5],
     format: "yyyy/mm/dd"    
   });
+
+
+  var parts = window.location.search.substr(1).split("&");
+  var $_GET = {};
+  for (var i = 0; i < parts.length; i++) {
+    var temp = parts[i].split("=");
+    $_GET[decodeURIComponent(temp[0])] = decodeURIComponent(temp[1]);
+    console.log($_GET["loc"]);
+    Cargarlocacion_Est($_GET["loc"]);
+}
+
 });
          
    </script>
