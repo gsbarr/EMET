@@ -451,7 +451,7 @@ async function Cargarlocacion_Est(id_locacion){
 
 
 //URL del servicio  -  El codigo espera una respuesta
-const respuesta = await fetch('api/locaciones/' + id_locacion, {
+const respuesta = await fetch('api/locacion/' + id_locacion, {
 method: 'GET', //metodo HTTP
 headers: {   //aca decimos que devuelve un JSON
     'Accept': 'application/json',
@@ -461,6 +461,8 @@ headers: {   //aca decimos que devuelve un JSON
 
 const datos = await respuesta.json();
 
+
+  
 
   nombrepais = document.querySelector("#pais");
   nombreprovincia = document.querySelector("#provincia");
