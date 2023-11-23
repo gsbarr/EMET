@@ -229,6 +229,7 @@ h3{
     height: 60px;
     margin-left: 20%;
     margin-top: 10%;
+    z-index: 30
 }
 
 .stats{
@@ -236,6 +237,10 @@ h3{
     border-radius: 10px;
     width: 210px;
     height: 150px;
+}
+
+.zindex{
+    z-index: 20;
 }
 
 .progress-bar {
@@ -275,6 +280,9 @@ h3{
     background-image: linear-gradient(rgb(192, 188, 179) 50%, rgb(240, 211, 117) 50%);
     transform: rotate(120deg);
     animation: rotate 1.5s linear;
+    width: 86%;
+    height: 86%;
+    margin-top: -2%;
 }
 
 @keyframes rotate {
@@ -290,11 +298,12 @@ h3{
 .data::after {
     position: absolute;
     background-color: white;
+    margin-left: -10%;
 }
 
 .data {
     width: 50%;
-    height: 50%;
+    height: 55%;
     border-radius: 50%;
     top: 12.5%;
     left: 25%;
@@ -302,13 +311,13 @@ h3{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    z-index: 10;
+    z-index: 9;
 }
 
 .data::after {
     content: "";
     width: 150px;
-    height: 40px;
+    height: 69px;
     top: 50%;
     z-index: -1;
 }
