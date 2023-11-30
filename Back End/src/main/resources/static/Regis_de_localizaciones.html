@@ -19,22 +19,26 @@
           
         <div class="row">
           <div class="input-field col s4">
-            <input placeholder="Nombre de Lugar" id="lugar" name="nom_lugar" style="color:black;" class="validate">
+            <input id="lugar" name="nom_lugar" style="color:black;" class="validate">
+            <label for="email">Nombre del lugar</label>
           </div>
         </div>
               <div class="row">
                 <div class="input-field col s4">
-                  <input placeholder="Titular" id="fk_titular" name="titular" style="color:black;" class="validate">
+                  <input id="fk_titular" name="titular" style="color:black;" class="validate">
+                  <label for="email">Titular</label>
                 </div>
               </div>
               <div class="row">
                 <div class="input-field col s4">
-                  <input placeholder="Direccion" id="direc" name="direccion" style="color:black;" class="validate">
+                  <input id="direc" name="direccion" style="color:black;" class="validate">
+                  <label for="direc">Dirección</label>
                 </div>
               </div>
               <div class="row">
                 <div class="input-field col s4">
-                  <input placeholder="Coordenadas" id="coordenadas" name="coordenadas" class="validate" style="color:black;">
+                  <input id="coordenadas" name="coordenadas" class="validate" style="color:black;">
+                  <label for="cord">Coordenadas</label>
                 </div>
               </div>
             </form>
@@ -44,7 +48,7 @@
             <form class="col s12 register">
                 <div class="row">
                     <div class="input-field col s4">
-                        <a href="#"  class="waves-effect waves-light btn" style="margin-left: 40%; margin-top: 1%" onclick="crearLocacion()">Agregar localizacion </a>
+                        <a href="perfil.html"  class="waves-effect waves-light btn" style="margin-left: 40%; margin-top: 1%" onclick="crearUser()">Agregar localizacion </a>
                     </div>
                 </div>
             </form>
@@ -63,6 +67,6 @@
         });
     </script>
 
-    <script src="js/perfil.js"></script>
+    <script src="js/usuarioCrud.js"></script>
 </body>
 </html>

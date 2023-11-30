@@ -27,8 +27,8 @@ public class Temp_Hum {
     private Float valorHum;
 
     @Getter @Setter
-    @Column(name = "fecha_hora")
-    private Date fechaHora;
+    @Column(name = "fecha")
+    private Date fecha;
 
     @Getter @Setter
     @ManyToOne(optional = true)

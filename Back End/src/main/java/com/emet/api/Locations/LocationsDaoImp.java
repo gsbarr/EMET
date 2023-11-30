@@ -5,7 +5,7 @@ public class LocationsDaoImp implements LocationsDao {
     private LocationsRepository locationsRepository;
 
     @Override
-    public Location getLocacionById(Long id) {
+    public Location getLocationById(Long id) {
         Location loc = locationsRepository.findById(id).orElse(null);
         return loc;
     }

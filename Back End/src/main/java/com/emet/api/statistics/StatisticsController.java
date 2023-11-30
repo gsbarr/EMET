@@ -17,4 +17,9 @@ public class StatisticsController {
     public List<Statistics> getList(@RequestBody Map<String, String> fecha_semana) {
         return estadisticaDao.getList(fecha_semana);
     }
+
+    @GetMapping
+    public void getProm(){
+
+    }
 }

@@ -20,8 +20,8 @@ public class Pre_Atmosferica {
     private Long id;
 
     @Getter @Setter
-    @Column(name = "fecha_hora")
-    private Date fechaHora;
+    @Column(name = "fecha")
+    private Date fecha;
 
     @Getter @Setter
     @Column(name = "presion")

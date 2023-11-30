@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 public interface LocationsDao {
 
-    Location getLocacionById(@PathVariable Long id);
+    Location getLocationById(@PathVariable Long id);
 
     void saveLocation(@RequestBody LocationData data);
 }

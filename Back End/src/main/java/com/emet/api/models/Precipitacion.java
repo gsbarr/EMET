@@ -23,8 +23,8 @@ public class Precipitacion {
     private Float valorPrecipiMm;
 
     @Getter @Setter
-    @Column(name = "fecha_hora")
-    private Date fechaHora;
+    @Column(name = "fecha")
+    private Date fecha;
 
     @Getter @Setter
     @ManyToOne(optional = true)

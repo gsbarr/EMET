@@ -48,4 +48,9 @@ public class Location {
     @OneToMany(mappedBy = "locacion")
     @JsonManagedReference
     private List<Statistics> estadisticas;
+
+    @Getter
+    @Setter
+    @Column(name = "id_arduino")
+    private Long id_arduino;
 }

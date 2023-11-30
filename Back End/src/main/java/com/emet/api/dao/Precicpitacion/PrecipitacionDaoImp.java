@@ -18,7 +18,7 @@ public class PrecipitacionDaoImp implements PrecipitacionDao{
         Precipitacion preciEntity = new Precipitacion();
 
         preciEntity.setValorPrecipiMm(agua_llovida);
-        preciEntity.setFechaHora(fecha_hora);
+        preciEntity.setFecha(fecha_hora);
         preciEntity.setLocacion(null);
 
         precipitacionRepo.save(preciEntity);

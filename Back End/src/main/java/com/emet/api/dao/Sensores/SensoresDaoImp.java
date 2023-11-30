@@ -4,6 +4,8 @@ import com.emet.api.dto.SensorData;
 import com.emet.api.dao.Pre_Atmosferica.Pre_AtmosfericaDaoImp;
 import com.emet.api.dao.Precicpitacion.PrecipitacionDaoImp;
 import com.emet.api.dao.Temp_Hum.Temp_HumDaoImp;
+import com.emet.api.statistics.StatisticsDaoImp;
+import com.emet.api.statistics.StatisticsRepository;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -22,6 +24,10 @@ public class SensoresDaoImp implements SensoresDao {
     private Pre_AtmosfericaDaoImp preAtmosfericaDao;
     @Autowired  //Inyección de dependencias
     private PrecipitacionDaoImp precipitacionDao;
+    @Autowired
+    private StatisticsRepository statisticsRepo;
+    @Autowired
+    private StatisticsDaoImp statisticsDao;
 
     @Override
     public void saveDataSensor(SensorData sensorData) {
@@ -35,6 +41,8 @@ public class SensoresDaoImp implements SensoresDao {
         tempHumDao.save(temp, hum, date);
         preAtmosfericaDao.save(presion, altitud, date);
         precipitacionDao.save(precipitacion, date);
+
+        statisticsDao.promStatistics(date, );
     }
 
     private Date parseDate(String dateStr){
@@ -47,5 +55,9 @@ public class SensoresDaoImp implements SensoresDao {
             e.printStackTrace();
         }
         return null;
+    }
+
+    private void generateStats(){
+        statisticsRepo.findFirstByOrderByFechaDesc();
     }
 }

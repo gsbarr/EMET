@@ -36,14 +36,14 @@ const datos = await respuesta.json();
     locacion = document.querySelector(".locacion");
     nombre1 = document.querySelector("#nombre1");
     nombre2 = document.querySelector("#nombre2");
-    //email1= document.querySelector("#email1");
+    email1= document.querySelector("#email1");
     razonsocial= document.querySelector("#razonsocial");
     celular1= document.querySelector("#celular1");
     direccion3= document.querySelector("#direccion3");
 
     nombre1.innerHTML = datos["nombre"] +" "+ datos["apellido"];
     nombre2.innerHTML = datos["nombre"] +" "+ datos["apellido"];
-    //email1.innerHTML= datos["email"];
+    email1.innerHTML= datos["email"];
     razonsocial.innerHTML= datos["razonSocial"];
     celular1.innerHTML= datos["telefono"];
     direccion3.innerHTML= datos.domicilio["direccion"];
@@ -52,9 +52,7 @@ const datos = await respuesta.json();
 
         console.log(JSON.stringify(loc["coordenadas"]));
 
-        template = `<form action="Estadisticas.html" method="GET" name="formularioloc"> <input type="Hidden" value="${loc[id]}">
-        <a href="Estadisticas.html" onclick="document.formularioloc.submit()">
-       <div class="col-lg-8">
+        template = `<div class="col-lg-8">
         <div class="card mb-4">
           <div class="card-body">
             <div class="row">
@@ -75,8 +73,6 @@ const datos = await respuesta.json();
         </div>
         </div>
       </div>
-      </form>
-      </a>
         `;
         locacion.innerHTML += template;
 
@@ -85,25 +81,34 @@ const datos = await respuesta.json();
     });
 }
 
-function crearLocacion(){
+function crearlocacion(){
 
-    inputLugar = document.querySelector("#lugar");
-    inputTitular = document.querySelector("#fk_titular");
-    inputDireccion = document.querySelector("#direc");
-    inputCoordenadas = document.querySelector("#coordenadas");
+    inputName = document.querySelector("#nombres");
+    inputLastName = document.querySelector("#apellidos");
+    inputEmail = document.querySelector("#correo");
+    inputPassword = document.querySelector("#contraseña");
+    inputPasswordConfirm = document.querySelector("#confcontraseña");
     let datos = {};
     let codigoResp;
 
+    // Verifico si las password coinciden
+    if (inputPassword.value != inputPasswordConfirm.value){
+        alert("Las contraseñas no coinciden");
+        return;
+    }
+
     // Armamos el JSON con los datos del registro
-    datos.nombre = inputLugar.value;
-    datos.titular = inputTitular.value;
-    datos.direccion = inputDireccion.value;
-    datos.coordenadas = inputCoordenadas.value;
+    datos.name = inputName.value;
+    datos.last_name = inputLastName.value;
+    datos.email = inputEmail.value;
+    datos.password = inputPassword.value;
     
     console.log(JSON.stringify(datos));
+    console.log("creando usuario... ");
     // Petición HTTP
     try{   
-        respuesta = fetch('http://localhost:8080/api/locacion', {
+        respuesta = fetch('localhost:8080/api/usuarios', {
+            mode: 'no-cors',
             method: 'POST', //metodo HTTP
             headers: {   //aca decimos que devuelve un JSON
                 'Accept': 'application/json',

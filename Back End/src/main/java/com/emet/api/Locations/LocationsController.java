@@ -12,7 +12,7 @@ public class LocationsController {
 
     @GetMapping("/{id}")
     public ResponseEntity<Location> getLocacion(@PathVariable Long id) {
-        return new ResponseEntity<>(locationsDao.getLocacionById(id), HttpStatus.OK);
+        return new ResponseEntity<>(locationsDao.getLocationById(id), HttpStatus.OK);
     }
 
     @PostMapping
