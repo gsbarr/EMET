@@ -73,9 +73,18 @@
 
         <div>
           <p style="color: black; margin-top: -35%; margin-left: 58%;">Resumen del día</p>
-
+          <div style="background-color: grey"></div>
           <div class="stats" style="margin-top: 2%; margin-left: 57.4%;">
             <h7 style="margin-left: 6%;">UV Index</h7>
+            <div class="bar-uvindex" style="margin-top: -25%;">
+              <form action="" class="w3-container w3-margin" id="form">
+              </form>
+              
+              <div class="graph-group" id="group"></div>
+            </div>
+            <!-- <div id="progress-bar" class="progress-bar">
+              <div class="progreso"></div>
+            </div> -->  
           </div>
           <div class="stats" style="margin-top: -11%; margin-left: 73.7%;">
             <h7 style="margin-left: 6%;">Estado del viento</h7>
@@ -85,11 +94,72 @@
             <h7 style="margin-left: 6%;">Visibilidad</h7>
             <h3 style="margin-left: 6%;">5.2 km</h3>
           </div>
-          <div class="stats" style="margin-top: -10.9%; margin-left: 57.4%;">
+          <div class="stats zindex" style="margin-top: -10.9%; margin-left: 57.4%;">
             <h7 style="margin-left: 6%;">Humedad</h7>
             <h3>14%</h3>
           </div>
         
         </div>
+
+        <script>
+          /*const width = 400;
+          const height = 200;
+                  
+          const svg = d3.select("#progress-bar")
+            .append("svg")
+            .attr("width", width)
+            .attr("height", height);
+                  
+          const progress = svg.append("path")
+            .attr("d", "M0,0 Q200,-100 400,0 L400,50 L0,50 Z")
+            .attr("fill", "#4caf50");
+                  
+          progress.transition()
+            .duration(2000)
+            .attr("d", "M0,0 Q200,-200 400,0 L400,50 L0,50 Z");*/
+
+          const graphGroup = document.getElementById('group')
+          const form = document.getElementById('form')
+                  
+          form.addEventListener('submit', e => {
+          
+              e.preventDefault()
+          
+              let targetValue = document.getElementById('input')
+              let builder = targetValue.value.split(",");
+          
+              generateGraph(parseInt(builder[0]), builder[1])
+              setRotation(parseInt(builder[0]), builder[1])
+              targetValue.value = ""
+          })
+          
+          function generateGraph(title) {
+          
+              let generate = document.createElement('div')
+              generate.className = "graph-container"
+              generate.id = title;
+              generate.innerHTML =
+                  `
+          <div class="graph-container">
+              <div class="graphic" id="${title}-content"></div>
+              <div class="data">
+                  <h4>${title}</h4>
+              </div>
+          </div>
+          `
+              graphGroup.appendChild(generate);
+          }
+          
+          function setRotation(id) {
+              let rotation = (180 * percentage) / 100;
+          
+              let container = document.getElementById(`${id}-content`);
+              container.style.transform = `rotate(${rotation}deg)`
+          }
+          
+          window.addEventListener('load', () => {
+              generateGraph("70%")
+          })
+        </script>
     </body>
 </html>

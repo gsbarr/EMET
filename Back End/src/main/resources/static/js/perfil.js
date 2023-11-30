@@ -1,58 +1,59 @@
-
-async function Cargarlocacion(){
-    perfil=1;
+async function Cargarlocacion() {
+  perfil = 1;
 
   //URL del servicio  -  El codigo espera una respuesta
-  const respuesta = await fetch('api/titulares/' + perfil, {
-  method: 'GET', //metodo HTTP
-  headers: {   //aca decimos que devuelve un JSON
-      'Accept': 'application/json',
-      'Content-Type': 'application/json'
-    }
+  const respuesta = await fetch("api/titulares/" + perfil, {
+    method: "GET", //metodo HTTP
+    headers: {
+      //aca decimos que devuelve un JSON
+      Accept: "application/json",
+      "Content-Type": "application/json",
+    },
   });
 
-const datos = await respuesta.json();
+  const datos = await respuesta.json();
 
-// datos =JSON.parse(` {
-//     "id":1,
-//     "nombre":"carlos",
-//     "apellido":"juan",
-//     "locacion": [{
-//         "id":1,
-//         "nombre":"Los talas",
-//         "coordenadas":"25 64",
-//         "direccion":"carlitos 245"
-//     },
-//     {
-//         "id":2,
-//         "nombre":"isla paulino",
-//         "coordenadas":"53 62",
-//         "direccion":"juan carlos 23"
-//     }],
-//     "domicilio":"los talas 1345"
-// }`);
+  // datos =JSON.parse(` {
+  //     "id":1,
+  //     "nombre":"carlos",
+  //     "apellido":"juan",
+  //     "locacion": [{
+  //         "id":1,
+  //         "nombre":"Los talas",
+  //         "coordenadas":"25 64",
+  //         "direccion":"carlitos 245"
+  //     },
+  //     {
+  //         "id":2,
+  //         "nombre":"isla paulino",
+  //         "coordenadas":"53 62",
+  //         "direccion":"juan carlos 23"
+  //     }],
+  //     "domicilio":"los talas 1345"
+  // }`);
 
-    // Obtenemos el div donde vamos a insertas las locaciones
-    locacion = document.querySelector(".locacion");
-    nombre1 = document.querySelector("#nombre1");
-    nombre2 = document.querySelector("#nombre2");
-    email1= document.querySelector("#email1");
-    razonsocial= document.querySelector("#razonsocial");
-    celular1= document.querySelector("#celular1");
-    direccion3= document.querySelector("#direccion3");
+  // Obtenemos el div donde vamos a insertas las locaciones
+  locacion = document.querySelector(".locacion");
+  nombre1 = document.querySelector("#nombre1");
+  nombre2 = document.querySelector("#nombre2");
+  email1 = document.querySelector("#email1");
+  razonsocial = document.querySelector("#razonsocial");
+  celular1 = document.querySelector("#celular1");
+  direccion3 = document.querySelector("#direccion3");
 
-    nombre1.innerHTML = datos["nombre"] +" "+ datos["apellido"];
-    nombre2.innerHTML = datos["nombre"] +" "+ datos["apellido"];
-    email1.innerHTML= datos["email"];
-    razonsocial.innerHTML= datos["razonSocial"];
-    celular1.innerHTML= datos["telefono"];
-    direccion3.innerHTML= datos.domicilio["direccion"];
+  nombre1.innerHTML = datos["nombre"] + " " + datos["apellido"];
+  nombre2.innerHTML = datos["nombre"] + " " + datos["apellido"];
+  email1.innerHTML = datos["email"];
+  razonsocial.innerHTML = datos["razonSocial"];
+  celular1.innerHTML = datos["telefono"];
+  direccion3.innerHTML = datos.domicilio["direccion"];
 
-    datos.locaciones.forEach(loc => {
+  datos.locaciones.forEach((loc) => {
+    console.log(JSON.stringify(loc["coordenadas"]));
 
-        console.log(JSON.stringify(loc["coordenadas"]));
-
-        template = `<div class="col-lg-8">
+    template = `<form action="Estadisticas.html" method="GET" name="formularioloc"> <input type="Hidden" name="loc" value="${loc[id]}">
+        <a href="Estadisticas.html" onclick="document.formularioloc.submit()">
+       <div class="col-lg-8">
         <div class="card mb-4">
           <div class="card-body">
             <div class="row">
@@ -74,62 +75,56 @@ const datos = await respuesta.json();
         </div>
       </div>
         `;
-        locacion.innerHTML += template;
-
-        
-
-    });
+    locacion.innerHTML += template;
+  });
 }
 
-function crearlocacion(){
+function crearlocacion() {
+  inputName = document.querySelector("#nombres");
+  inputLastName = document.querySelector("#apellidos");
+  inputEmail = document.querySelector("#correo");
+  inputPassword = document.querySelector("#contraseña");
+  inputPasswordConfirm = document.querySelector("#confcontraseña");
+  let datos = {};
+  let codigoResp;
 
-    inputName = document.querySelector("#nombres");
-    inputLastName = document.querySelector("#apellidos");
-    inputEmail = document.querySelector("#correo");
-    inputPassword = document.querySelector("#contraseña");
-    inputPasswordConfirm = document.querySelector("#confcontraseña");
-    let datos = {};
-    let codigoResp;
+  // Verifico si las password coinciden
+  if (inputPassword.value != inputPasswordConfirm.value) {
+    alert("Las contraseñas no coinciden");
+    return;
+  }
 
-    // Verifico si las password coinciden
-    if (inputPassword.value != inputPasswordConfirm.value){
-        alert("Las contraseñas no coinciden");
-        return;
-    }
+  // Armamos el JSON con los datos del registro
+  datos.name = inputName.value;
+  datos.last_name = inputLastName.value;
+  datos.email = inputEmail.value;
+  datos.password = inputPassword.value;
 
-    // Armamos el JSON con los datos del registro
-    datos.name = inputName.value;
-    datos.last_name = inputLastName.value;
-    datos.email = inputEmail.value;
-    datos.password = inputPassword.value;
-    
-    console.log(JSON.stringify(datos));
-    console.log("creando usuario... ");
-    // Petición HTTP
-    try{   
-        respuesta = fetch('localhost:8080/api/usuarios', {
-            mode: 'no-cors',
-            method: 'POST', //metodo HTTP
-            headers: {   //aca decimos que devuelve un JSON
-                'Accept': 'application/json',
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(datos)     //Acá van los datos del registro    
-        })
-        .then(response => {
-            codigoResp = response.status;
-            console.log("Respuesta de petición: "+response.status);
+  console.log(JSON.stringify(datos));
+  console.log("creando usuario... ");
+  // Petición HTTP
+  try {
+    respuesta = fetch("localhost:8080/api/usuarios", {
+      mode: "no-cors",
+      method: "POST", //metodo HTTP
+      headers: {
+        //aca decimos que devuelve un JSON
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(datos), //Acá van los datos del registro
+    }).then((response) => {
+      codigoResp = response.status;
+      console.log("Respuesta de petición: " + response.status);
 
-            //recargamos la pagina
-            if(codigoResp >= 200 && codigoResp < 300){
-            console.log("Recargando pagina...")
-            location.reload();
-            }
-        });
-    }
-    catch (error){
-        //hubo un error
-        console.log("Error en registro: " + error);
-    }
-
+      //recargamos la pagina
+      if (codigoResp >= 200 && codigoResp < 300) {
+        console.log("Recargando pagina...");
+        location.reload();
+      }
+    });
+  } catch (error) {
+    //hubo un error
+    console.log("Error en registro: " + error);
+  }
 }
